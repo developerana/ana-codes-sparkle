@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: Clapperboard,
     title: "Audiovisual",
-    description: "Edição, motion e conteúdo para redes",
+    description: "Edição de vídeos, CapCut Pro e storytelling visual.",
   },
   {
     icon: Megaphone,
@@ -65,16 +65,16 @@ export const AboutSection = () => {
               .
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Minha formação técnica me permite unir criatividade e tecnologia
-              para produzir conteúdos que realmente chamam atenção — do
-              planejamento da campanha ao corte final, da identidade visual à
-              interface no navegador.
+              Acredito que os melhores projetos nascem da união entre
+              criatividade, estratégia e tecnologia. Minha formação me permite
+              transformar ideias em soluções visuais que não apenas chamam
+              atenção, mas também comunicam com clareza e geram resultados.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Trabalho com Reels, campanhas institucionais, motion graphics,
-              identidade visual e sistemas web. Sou apaixonada pelo universo
-              gamer, e isso aparece na forma como penso ritmo, narrativa e
-              impacto visual em cada projeto.
+              Trabalho com edição de vídeos, marketing, campanhas para redes
+              sociais, identidade visual e desenvolvimento web, sempre buscando
+              criar experiências que conectem marcas, pessoas e histórias de
+              forma autêntica.
             </p>
           </motion.div>
 
