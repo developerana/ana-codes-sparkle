@@ -1,13 +1,23 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Award, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap, Clapperboard, Calendar } from "lucide-react";
 
 const experiences = [
-    {
-    type: "education", 
+  {
+    type: "work",
+    title: "Marketing & Editora de Vídeo",
+    company: "UNIVETS Saúde Animal",
+    period: "Atual",
+    description:
+      "Planejamento de campanhas, criação de Reels, motion design, edição de vídeos, gestão de redes sociais, identidade visual e materiais impressos.",
+    icon: Clapperboard,
+  },
+  {
+    type: "education",
     title: "Bacharel em Sistemas de Informação",
     company: "Fundação de Ensino e Pesquisa de Itajubá - FEPI",
     period: "2022 - 2025",
-    description: "Formação completa com foco em desenvolvimento de software, banco de dados, engenharia de software e gestão de projetos.",
+    description:
+      "Formação completa com foco em desenvolvimento de software, banco de dados, engenharia de software e gestão de projetos.",
     icon: GraduationCap,
   },
   {
@@ -15,7 +25,8 @@ const experiences = [
     title: "Scrum Master",
     company: "Plataforma de Gerenciamento de Atletas - T21 Arena Park (FEPI)",
     period: "07/2024 - 12/2024",
-    description: "Liderei uma equipe multidisciplinar, composta por desenvolvedores, designers, analistas e testadores, garantindo que todos estivessem alinhados com os objetivos do nosso projeto",
+    description:
+      "Liderei uma equipe multidisciplinar, composta por desenvolvedores, designers, analistas e testadores, garantindo que todos estivessem alinhados com os objetivos do projeto.",
     icon: Briefcase,
   },
   {
@@ -23,18 +34,21 @@ const experiences = [
     title: "Desenvolvedora Front-End",
     company: "Plataforma de Gerenciamento de Atletas - T21 Arena Park (FEPI)",
     period: "03/2024 - 06/2024",
-    description: "Trabalhei com tecnologias como React.js e Tailwind CSS para garantir uma experiência fluida para os usuários. Sempre ocando em práticas de desenvolvimento responsivo, acessível e intuitivas",
+    description:
+      "Trabalhei com React.js e Tailwind CSS para garantir uma experiência fluida, com foco em desenvolvimento responsivo, acessível e intuitivo.",
     icon: Briefcase,
   },
   {
-    type: "internship",
-    title: "Site de Saude Mental",
+    type: "project",
+    title: "Site de Saúde Mental",
     company: "Escola Estadual Nossa Senhora de Lourdes",
     period: "2018 - 2020",
-    description: "Durante o ensino médio, criei um site chamado “Corrente do Bem” para ajudar pessoas lidando com depressão e ansiedade. O site oferecia recursos úteis e mensagens de apoio para aqueles que precisavam de orientação e conforto. Palestrei sobre o projeto para dezenas de pessoas.",
+    description:
+      "Criei o site “Corrente do Bem” para ajudar pessoas lidando com depressão e ansiedade, com recursos úteis e mensagens de apoio. Palestrei sobre o projeto para dezenas de pessoas.",
     icon: Briefcase,
   },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
