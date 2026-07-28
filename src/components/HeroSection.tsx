@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const roles = ["Creative Editor", "Marketing Digital", "Desenvolvimento"];
+const roles = ["Edição de Videos", "Marketing", "Desenvolvimento"];
 
 export const HeroSection = () => {
   return (
@@ -56,9 +56,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold mb-6 tracking-tight"
           >
-            Transformando ideias em
-            <br />
-            <span className="gradient-text">experiências visuais</span>
+            Ana&nbsp;<span className="gradient-text">Helouise</span>
           </motion.h1>
 
           <motion.p
