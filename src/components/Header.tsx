@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { name: "Início", href: "#home" },
   { name: "Sobre", href: "#about" },
+  { name: "Vídeos", href: "#reel" },
   { name: "Habilidades", href: "#skills" },
-  { name: "Experiência", href: "#experience" },
   { name: "Projetos", href: "#projects" },
+  { name: "Experiência", href: "#experience" },
   { name: "Contato", href: "#contact" },
 ];
+
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
