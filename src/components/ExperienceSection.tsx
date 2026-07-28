@@ -91,7 +91,7 @@ export const ExperienceSection = () => {
             <span className="gradient-text">Experiência</span> & Formação
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Minha trajetória profissional e acadêmica, com foco em desenvolvimento web e tecnologia.
+            Minha trajetória unindo produção audiovisual, marketing e tecnologia.
           </p>
         </motion.div>
 
