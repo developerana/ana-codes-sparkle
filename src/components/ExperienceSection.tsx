@@ -6,7 +6,7 @@ const experiences = [
     type: "work",
     title: "Marketing & Editora de Vídeo",
     company: "UNIVETS Saúde Animal",
-    period: "Atual",
+    period: "02/2026 - Atualmente",
     description:
       "Planejamento de campanhas, criação de Reels, motion design, edição de vídeos, gestão de redes sociais, identidade visual e materiais impressos.",
     icon: Clapperboard,
