@@ -15,7 +15,7 @@ const experiences = [
     type: "education",
     title: "Bacharel em Sistemas de Informação",
     company: "Fundação de Ensino e Pesquisa de Itajubá - FEPI",
-    period: "2022 - 2025",
+    period: "07/02/2022 - 07/02/2026",
     description:
       "Formação completa com foco em desenvolvimento de software, banco de dados, engenharia de software e gestão de projetos.",
     icon: GraduationCap,
