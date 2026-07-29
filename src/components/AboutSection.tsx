@@ -16,12 +16,12 @@ const highlights = [
   },
   {
     icon: Code2,
-    title: "Tecnologia",
+    title: "Formação",
     description: "Bacharel em Sistemas de Informação",
   },
   {
     icon: Gamepad2,
-    title: "Universo Gamer",
+    title: "Universo Nerd",
     description: "Narrativa visual e estética cinematográfica",
   },
 ];
@@ -65,16 +65,13 @@ export const AboutSection = () => {
               .
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Acredito que os melhores projetos nascem da união entre
-              criatividade, estratégia e tecnologia. Minha formação me permite
-              transformar ideias em soluções visuais que não apenas chamam
-              atenção, mas também comunicam com clareza e geram resultados.
+              Minha formação técnica me permite ir além da execução: penso cada
+              projeto de forma estratégica, unindo criatividade, tecnologia e
+              comunicação para construir experiências que geram impacto.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Trabalho com edição de vídeos, marketing, campanhas para redes
-              sociais, identidade visual e desenvolvimento web, sempre buscando
-              criar experiências que conectem marcas, pessoas e histórias de
-              forma autêntica.
+              Produzo vídeos, campanhas para redes sociais, identidades visuais
+              e projetos web, sempre buscando transformar ideias em conteúdos.
             </p>
           </motion.div>
 
