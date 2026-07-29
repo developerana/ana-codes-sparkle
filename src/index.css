@@ -89,6 +89,23 @@
 }
 
 @layer components {
+  .bento {
+    @apply rounded-3xl bg-card border border-border/70;
+  }
+
+  .bento-hover {
+    @apply transition-all duration-300 hover:border-primary/40 hover:-translate-y-0.5;
+  }
+
+  .chip {
+    @apply inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/25;
+  }
+
+  .tag {
+    @apply text-[11px] px-2.5 py-1 rounded-lg bg-muted/70 border border-border/60 text-muted-foreground;
+  }
+
+
   .glass-card {
     @apply bg-card/40 backdrop-blur-2xl border border-border/30 rounded-2xl;
     box-shadow: var(--shadow-card);
