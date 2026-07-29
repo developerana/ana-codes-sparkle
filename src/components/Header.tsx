@@ -98,6 +98,17 @@ export const Header = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/curriculo-ana-helouise.pdf"
+                  download="Curriculo-Ana-Helouise.pdf"
+                  className="inline-flex items-center text-primary font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Baixar Currículo
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}
