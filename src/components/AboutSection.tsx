@@ -45,7 +45,7 @@ export const AboutSection = () => {
             Sobre Mim
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mt-3">
-            Criatividade com <span className="gradient-text">base técnica</span>
+            Estratégia, criatividade e tecnologia.
           </h2>
         </motion.div>
 
