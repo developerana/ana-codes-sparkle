@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -47,15 +47,26 @@ export const Header = () => {
         </motion.a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a href={link.href} className="nav-link text-sm font-medium">
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a href={link.href} className="nav-link text-sm font-medium">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <Button variant="heroOutline" size="sm" asChild>
+            <a
+              href="/curriculo-ana-helouise.pdf"
+              download="Curriculo-Ana-Helouise.pdf"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Currículo
+            </a>
+          </Button>
+        </div>
 
         {/* Mobile Menu Button */}
         <Button
@@ -87,6 +98,17 @@ export const Header = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/curriculo-ana-helouise.pdf"
+                  download="Curriculo-Ana-Helouise.pdf"
+                  className="inline-flex items-center text-primary font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Baixar Currículo
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}
