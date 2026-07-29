@@ -1,171 +1,92 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Clapperboard, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap, Clapperboard } from "lucide-react";
 
 const experiences = [
   {
-    type: "work",
     title: "Marketing & Editora de Vídeo",
     company: "UNIVETS Saúde Animal",
     period: "02/2026 - Atualmente",
     description:
       "Planejamento de campanhas, criação de Reels, motion design, edição de vídeos, gestão de redes sociais, identidade visual e materiais impressos.",
     icon: Clapperboard,
+    current: true,
   },
   {
-    type: "education",
     title: "Bacharel em Sistemas de Informação",
     company: "Fundação de Ensino e Pesquisa de Itajubá - FEPI",
     period: "07/02/2022 - 07/02/2026",
     description:
-      "Formação completa com foco em desenvolvimento de software, banco de dados, engenharia de software e gestão de projetos.",
+      "Formação com foco em desenvolvimento de software, banco de dados, engenharia de software e gestão de projetos.",
     icon: GraduationCap,
+    current: false,
   },
   {
-    type: "work",
     title: "Scrum Master",
-    company: "Plataforma de Gerenciamento de Atletas - T21 Arena Park (FEPI)",
+    company: "T21 Arena Park (FEPI)",
     period: "07/2024 - 12/2024",
     description:
-      "Liderei uma equipe multidisciplinar, composta por desenvolvedores, designers, analistas e testadores, garantindo que todos estivessem alinhados com os objetivos do projeto.",
+      "Liderei uma equipe multidisciplinar de desenvolvedores, designers, analistas e testadores, mantendo todos alinhados aos objetivos do projeto.",
     icon: Briefcase,
+    current: false,
   },
   {
-    type: "internship",
     title: "Desenvolvedora Front-End",
-    company: "Plataforma de Gerenciamento de Atletas - T21 Arena Park (FEPI)",
+    company: "T21 Arena Park (FEPI)",
     period: "03/2024 - 06/2024",
     description:
-      "Trabalhei com React.js e Tailwind CSS para garantir uma experiência fluida, com foco em desenvolvimento responsivo, acessível e intuitivo.",
+      "React.js e Tailwind CSS com foco em desenvolvimento responsivo, acessível e intuitivo.",
     icon: Briefcase,
+    current: false,
   },
   {
-    type: "project",
     title: "Site de Saúde Mental",
     company: "Escola Estadual Nossa Senhora de Lourdes",
     period: "2018 - 2020",
     description:
-      "Criei o site “Corrente do Bem” para ajudar pessoas lidando com depressão e ansiedade, com recursos úteis e mensagens de apoio. Palestrei sobre o projeto para dezenas de pessoas.",
+      "Criei o site “Corrente do Bem” para apoiar pessoas lidando com depressão e ansiedade, e palestrei sobre o projeto.",
     icon: Briefcase,
+    current: false,
   },
 ];
 
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 -left-32 w-64 h-64 glow-orb" />
-      <div className="absolute bottom-1/4 -right-32 w-48 h-48 glow-orb" />
+    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8">
+      <h2 className="font-heading text-2xl font-bold tracking-tight mb-8">
+        EXPERIÊNCIA
+      </h2>
 
-      <div className="section-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            <span className="gradient-text">Experiência</span> & Formação
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Minha trajetória unindo produção audiovisual, marketing e tecnologia.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="relative"
-        >
-          {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent md:-translate-x-px" />
-
-          {experiences.map((exp, index) => {
-            const Icon = exp.icon;
-            const isEven = index % 2 === 0;
-
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className={`relative flex items-center mb-12 last:mb-0 ${
-                  isEven ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 -translate-x-1/2 z-20">
-                  <div className="w-full h-full rounded-full bg-primary animate-pulse-glow" />
-                  <div className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
-                </div>
-
-                {/* Card */}
-                <div
-                  className={`ml-20 md:ml-0 md:w-[calc(50%-2rem)] ${
-                    isEven ? "md:pr-8" : "md:pl-8"
-                  }`}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ duration: 0.3 }}
-                    className="glass-card-hover p-6 group"
-                  >
-                    {/* Icon badge */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors duration-300">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-heading font-semibold text-lg text-foreground group-hover:text-primary transition-colors duration-300">
-                          {exp.title}
-                        </h3>
-                        <p className="text-primary/80 font-medium">{exp.company}</p>
-                      </div>
-                    </div>
-
-                    {/* Period */}
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                      <Calendar className="w-4 h-4" />
-                      <span>{exp.period}</span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    {/* Decorative gradient line */}
-                    <div className="mt-4 h-px w-full bg-gradient-to-r from-primary/50 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </motion.div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+      <div className="space-y-6">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={exp.title}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4, delay: index * 0.06 }}
+            className="relative pl-6 border-l-2 border-primary/25 last:border-l-transparent pb-1"
+          >
+            <span
+              className={`absolute -left-[9px] top-0.5 w-4 h-4 rounded-full ${
+                exp.current ? "bg-primary" : "bg-muted"
+              }`}
+            />
+            <div
+              className={`text-xs font-bold mb-1 ${
+                exp.current ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              {exp.period}
+            </div>
+            <h3 className="font-heading font-semibold leading-tight">
+              {exp.title}
+            </h3>
+            <p className="text-sm text-muted-foreground mb-2">{exp.company}</p>
+            <p className="text-sm text-muted-foreground/80 leading-relaxed">
+              {exp.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

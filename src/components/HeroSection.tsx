@@ -1,163 +1,126 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Instagram, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const roles = ["Edição de Videos", "Marketing", "Desenvolvimento"];
+const roles = ["Edição de Vídeos", "Marketing", "Desenvolvimento"];
 
 export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="md:col-span-8 bento p-8 lg:p-12 flex flex-col justify-end min-h-[420px] relative overflow-hidden"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(141,73%,42%,0.10),transparent_55%)]" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-glow-pulse" />
+      <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-primary/20 blur-[110px]" />
       <div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-glow-pulse"
-        style={{ animationDelay: "1.5s" }}
-      />
-
-      {/* Subtle HUD grid */}
-      <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+          backgroundSize: "72px 72px",
           maskImage:
-            "radial-gradient(ellipse at center, black 20%, transparent 70%)",
+            "radial-gradient(ellipse at 70% 0%, black 10%, transparent 65%)",
           WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 20%, transparent 70%)",
+            "radial-gradient(ellipse at 70% 0%, black 10%, transparent 65%)",
         }}
       />
 
-      <div className="section-container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6 flex flex-wrap items-center justify-center gap-2"
-          >
-            {roles.map((role, i) => (
-              <span key={role} className="flex items-center gap-2">
-                {i > 0 && <span className="text-primary/40 text-xs">•</span>}
-                <span className="inline-block px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/20">
-                  {role}
-                </span>
-              </span>
-            ))}
-          </motion.div>
+      <div className="relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-wrap gap-2 mb-6"
+        >
+          {roles.map((role) => (
+            <span key={role} className="chip">
+              {role}
+            </span>
+          ))}
+        </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold mb-6 tracking-tight"
-          >
-            Ana&nbsp;<span className="gradient-text">Helouise</span>
-          </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.05 }}
+          className="font-heading text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight mb-5"
+        >
+          Ana <span className="text-primary">Helouise</span>
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed"
-          >
-            Edição de vídeos, conteúdo para redes sociais, identidade visual,
-            desenvolvimento web e soluções criativas para marcas e criadores.
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.12 }}
+          className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
+        >
+          Editora de vídeo, marketing e desenvolvimento. Transformando ideias em
+          experiências visuais — do roteiro ao corte final, da campanha à
+          interface.
+        </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-sm text-muted-foreground/70 mb-8"
-          >
-            Sou <span className="text-foreground font-medium">Ana Helouise</span>,
-            Bacharel em Sistemas de Informação — criatividade com base técnica.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
-          >
-            <Button variant="hero" size="lg" asChild>
-              <a href="#reel">Ver Meus Trabalhos</a>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <a href="#contact">Vamos Criar Juntos</a>
-            </Button>
-            <Button variant="ghost" size="lg" asChild>
-              <a
-                href="/curriculo-ana-helouise.pdf"
-                download="Curriculo-Ana-Helouise.pdf"
-                className="text-primary hover:text-primary"
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Baixar Currículo
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center justify-center gap-6"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.18 }}
+          className="flex flex-wrap items-center gap-3 mt-8"
+        >
+          <Button variant="hero" size="lg" asChild>
+            <a href="#reel">Ver Meus Trabalhos</a>
+          </Button>
+          <Button variant="heroOutline" size="lg" asChild>
+            <a href="#contact">Vamos Criar Juntos</a>
+          </Button>
+          <Button variant="ghost" size="lg" asChild>
             <a
-              href="https://www.instagram.com/anahelouise/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label="Instagram"
+              href="/curriculo-ana-helouise.pdf"
+              download="Curriculo-Ana-Helouise.pdf"
+              className="text-primary hover:text-primary"
             >
-              <Instagram className="w-6 h-6" />
+              <Download className="w-5 h-5 mr-2" />
+              Currículo
             </a>
-            <a
-              href="https://www.linkedin.com/in/anahelouise/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="https://github.com/anahelouise"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <a
-              href="mailto:anahelouise.ss@email.com"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label="Email"
-            >
-              <Mail className="w-6 h-6" />
-            </a>
-          </motion.div>
-        </div>
+          </Button>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex items-center gap-5 mt-8 pt-6 border-t border-border/60"
         >
           <a
-            href="#about"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            href="https://www.instagram.com/anahelouise/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Instagram"
           >
-            <span className="text-xs">Role para baixo</span>
-            <ArrowDown className="w-5 h-5 animate-bounce" />
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anahelouise/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="https://github.com/anahelouise"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="GitHub"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="mailto:anahelouise.ss@email.com"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="w-5 h-5" />
           </a>
         </motion.div>
       </div>

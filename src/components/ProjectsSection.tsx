@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import {
   ExternalLink,
   Github,
@@ -10,7 +9,6 @@ import {
   Code2,
   Gamepad2,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 type Category = "Todos" | "Vídeos" | "Marketing" | "Design" | "Web" | "Games";
 
@@ -45,35 +43,35 @@ const projects: Project[] = [
     title: "Campanha Institucional",
     category: "Vídeos",
     description:
-      "Vídeo institucional para clínica veterinária: roteiro, captação, edição, motion e finalização com foco em transmitir cuidado e credibilidade.",
+      "Vídeo institucional para clínica veterinária: roteiro, captação, edição, motion e finalização.",
     tags: ["Premiere Pro", "After Effects", "Motion"],
   },
   {
     title: "Reels para Instagram",
     category: "Vídeos",
     description:
-      "Produção contínua de Reels com cortes dinâmicos, legendas animadas e trilha sincronizada para aumentar alcance e engajamento.",
+      "Produção contínua de Reels com cortes dinâmicos, legendas animadas e trilha sincronizada.",
     tags: ["CapCut Pro", "Premiere Pro", "Social Media"],
   },
   {
     title: "Motion Graphics",
     category: "Design",
     description:
-      "Aberturas, lower thirds e animações de logo criadas para reforçar a identidade visual das marcas em vídeos e campanhas.",
+      "Aberturas, lower thirds e animações de logo para reforçar a identidade visual das marcas.",
     tags: ["After Effects", "Illustrator", "Branding"],
   },
   {
     title: "Gestão de Redes Sociais",
     category: "Marketing",
     description:
-      "Planejamento editorial, criação de conteúdo, copywriting e acompanhamento de métricas para a UNIVETS Saúde Animal.",
+      "Planejamento editorial, criação de conteúdo, copywriting e métricas para a UNIVETS Saúde Animal.",
     tags: ["Social Media", "Copywriting", "Meta Ads"],
   },
   {
     title: "Identidade Visual",
     category: "Design",
     description:
-      "Criação de identidade visual e materiais gráficos — digitais e impressos — mantendo consistência em todos os pontos de contato.",
+      "Identidade visual e materiais gráficos, digitais e impressos, com consistência em todos os pontos de contato.",
     tags: ["Photoshop", "Illustrator", "Branding"],
   },
   {
@@ -87,16 +85,15 @@ const projects: Project[] = [
     title: "Sistema T21 Arena Park",
     category: "Web",
     description:
-      "Sistema de gestão de atletas com Síndrome de Down. Registra informações pessoais, anamnese e monitora aspectos físicos e psicológicos.",
+      "Sistema de gestão de atletas com Síndrome de Down: informações pessoais, anamnese e monitoramento.",
     tags: ["React", "Prisma", "Tailwind CSS"],
-    github: "#",
     demo: "https://t21-arena-park.com/",
   },
   {
     title: "Núcleo Mariense de Letras",
     category: "Web",
     description:
-      "Site para um coletivo cultural de Maria da Fé - MG, com a missão de promover e difundir a arte local em suas mais diversas formas.",
+      "Site para um coletivo cultural de Maria da Fé - MG, promovendo a arte local em suas diversas formas.",
     tags: ["HTML", "CSS", "JavaScript"],
     demo: "https://anahelouise.github.io/numale/",
   },
@@ -104,23 +101,21 @@ const projects: Project[] = [
     title: "E-commerce Opção Vidraçaria",
     category: "Web",
     description:
-      "Loja virtual para uma vidraçaria de Maria da Fé: apresentação, serviços, orçamentos e produtos. Foco em UX e performance.",
-    tags: ["TypeScript", "React", "Vite", "Tailwind CSS"],
+      "Loja virtual para uma vidraçaria: apresentação, serviços, orçamentos e produtos, com foco em UX.",
+    tags: ["TypeScript", "React", "Vite"],
     demo: "https://opcaovidracaria.vercel.app/",
   },
   {
     title: "Attack On Titan Wiki",
     category: "Games",
     description:
-      "Enciclopédia dedicada ao universo de Shingeki no Kyojin, unindo meu interesse por games e cultura pop com desenvolvimento web.",
+      "Enciclopédia do universo de Shingeki no Kyojin, unindo cultura pop e desenvolvimento web.",
     tags: ["HTML", "CSS", "JavaScript"],
     demo: "https://anahelouise.github.io/attackontitanwiki/",
   },
 ];
 
 export const ProjectsSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [active, setActive] = useState<Category>("Todos");
 
   const visible =
@@ -129,46 +124,22 @@ export const ProjectsSection = () => {
       : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(141,73%,42%,0.05),transparent_50%)]" />
-
-      <div className="section-container relative z-10" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
-        >
-          <span className="text-primary text-sm font-medium tracking-wider uppercase">
-            Portfólio
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mt-3">
-            Projetos <span className="gradient-text">Selecionados</span>
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Vídeos, campanhas, design e sistemas web — trabalhos que unem
-            criatividade e execução técnica.
-          </p>
-        </motion.div>
-
-        {/* Filters */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-2 mb-12"
-        >
+    <section id="projects" className="md:col-span-7 bento p-6 lg:p-8 flex flex-col">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <h2 className="font-heading text-2xl font-bold tracking-tight">
+          PROJETOS
+        </h2>
+        <div className="flex flex-wrap gap-2">
           {filters.map((filter) => {
-            const Icon = categoryIcons[filter];
             const isActive = active === filter;
             return (
               <button
                 key={filter}
                 onClick={() => setActive(filter)}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium border transition-colors duration-300 ${
+                className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isActive
-                    ? "text-primary-foreground border-primary"
-                    : "text-muted-foreground border-border/50 hover:text-foreground hover:border-primary/40"
+                    ? "text-primary-foreground"
+                    : "bg-muted/60 text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {isActive && (
@@ -178,106 +149,79 @@ export const ProjectsSection = () => {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                <span className="relative flex items-center gap-1.5">
-                  {Icon && <Icon className="w-3.5 h-3.5" />}
-                  {filter}
-                </span>
+                <span className="relative">{filter.toUpperCase()}</span>
               </button>
             );
           })}
-        </motion.div>
-
-        <motion.div layout className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          <AnimatePresence mode="popLayout">
-            {visible.map((project, index) => {
-              const Icon = categoryIcons[project.category] ?? Film;
-              return (
-                <motion.article
-                  key={project.title}
-                  layout
-                  initial={{ opacity: 0, y: 20, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.35, delay: index * 0.04 }}
-                  className="glass-card-hover group p-6 lg:p-8 flex flex-col"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <span className="text-[11px] uppercase tracking-wider text-primary font-medium">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="flex gap-3">
-                      {project.github && project.github !== "#" && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-foreground transition-colors"
-                          aria-label="Ver código no GitHub"
-                        >
-                          <Github className="w-5 h-5" />
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="Ver projeto"
-                        >
-                          <ExternalLink className="w-5 h-5" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-
-                  <h3 className="font-heading font-semibold text-xl mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-full bg-muted text-muted-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </motion.article>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <Button variant="heroOutline" size="lg" asChild>
-            <a
-              href="https://www.instagram.com/anahelouise/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Film className="w-5 h-5 mr-2" />
-              Ver mais trabalhos
-            </a>
-          </Button>
-        </motion.div>
+        </div>
       </div>
+
+      <motion.div layout className="grid sm:grid-cols-2 gap-4">
+        <AnimatePresence mode="popLayout">
+          {visible.map((project, index) => {
+            const Icon = categoryIcons[project.category] ?? Film;
+            return (
+              <motion.article
+                key={project.title}
+                layout
+                initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
+                className="group rounded-2xl bg-background border border-border/60 hover:border-primary/40 transition-colors p-5 flex flex-col"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-4 h-4 text-primary" />
+                  </div>
+                  <div className="flex gap-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        aria-label="Ver código no GitHub"
+                      >
+                        <Github className="w-4 h-4" />
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`Ver projeto ${project.title}`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <p className="text-[10px] uppercase tracking-wider text-primary font-bold mb-1">
+                  {project.category}
+                </p>
+                <h3 className="font-heading font-semibold leading-tight mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.article>
+            );
+          })}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 };

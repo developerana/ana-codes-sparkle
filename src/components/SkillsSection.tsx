@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import { Clapperboard, Megaphone, Code2 } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Produção Audiovisual",
+    title: "PRODUÇÃO AUDIOVISUAL",
     subtitle: "Meu foco principal",
     icon: Clapperboard,
-    featured: true,
     skills: [
       "Adobe Premiere Pro",
       "After Effects",
@@ -20,10 +17,9 @@ const skillCategories = [
     ],
   },
   {
-    title: "Marketing & Conteúdo",
+    title: "MARKETING & CONTEÚDO",
     subtitle: "Estratégia e presença digital",
     icon: Megaphone,
-    featured: true,
     skills: [
       "Social Media",
       "Branding",
@@ -36,10 +32,9 @@ const skillCategories = [
     ],
   },
   {
-    title: "Desenvolvimento",
+    title: "DESENVOLVIMENTO",
     subtitle: "Meu diferencial técnico",
     icon: Code2,
-    featured: false,
     skills: [
       "React",
       "TypeScript",
@@ -53,75 +48,43 @@ const skillCategories = [
 ];
 
 export const SkillsSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="skills" className="py-24 lg:py-32 relative bg-secondary/30">
-      <div className="section-container" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-medium tracking-wider uppercase">
-            Competências
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mt-3">
-            O que eu <span className="gradient-text">faço</span>
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Uma combinação de produção audiovisual, estratégia de marketing e
-            domínio técnico — tudo aplicado no mesmo projeto.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className={`p-6 lg:p-8 group ${
-                category.featured ? "glass-card-intense rounded-2xl" : "glass-card-hover"
-              }`}
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <category.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-lg leading-tight">
-                    {category.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    {category.subtitle}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{
-                      duration: 0.3,
-                      delay: 0.2 + categoryIndex * 0.1 + skillIndex * 0.04,
-                    }}
-                    className="text-sm px-3 py-1.5 rounded-lg bg-muted/60 border border-border/40 text-muted-foreground hover:border-primary/40 hover:text-foreground transition-colors"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <>
+      <div id="skills" className="md:col-span-12 sr-only">
+        Competências
       </div>
-    </section>
+      {skillCategories.map((category, index) => (
+        <motion.div
+          key={category.title}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.45, delay: index * 0.08 }}
+          className="md:col-span-4 bento bento-hover p-6 group"
+        >
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <category.icon className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-sm tracking-wide text-primary-glow">
+                {category.title}
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                {category.subtitle}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <span key={skill} className="tag">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      ))}
+    </>
   );
 };
