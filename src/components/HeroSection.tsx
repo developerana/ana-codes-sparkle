@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Instagram, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const roles = ["Edição de Videos", "Marketing", "Desenvolvimento"];
@@ -90,6 +90,16 @@ export const HeroSection = () => {
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
               <a href="#contact">Vamos Criar Juntos</a>
+            </Button>
+            <Button variant="ghost" size="lg" asChild>
+              <a
+                href="/curriculo-ana-helouise.pdf"
+                download="Curriculo-Ana-Helouise.pdf"
+                className="text-primary hover:text-primary"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Baixar Currículo
+              </a>
             </Button>
           </motion.div>
 
