@@ -1,8 +1,8 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
-// import { SkillsSection } from "@/components/SkillsSection";
-// import { ReelSection } from "@/components/ReelSection";
+// import { SkillsSection } from "@/components/SkillsSection"; <SkillsSection />
+// import { ReelSection } from "@/components/ReelSection"; <ReelSection />
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
@@ -16,8 +16,6 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <HeroSection />
           <AboutSection />
-         /* <ReelSection /> */
-        /* <SkillsSection /> */
           <ExperienceSection />
           <ProjectsSection />
           <ContactSection />
