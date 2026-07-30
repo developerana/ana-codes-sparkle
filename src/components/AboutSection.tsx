@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clapperboard, Megaphone, Code2, Gamepad2 } from "lucide-react";
 
 const highlights = [
-  { icon: Clapperboard, title: "AUDIOVISUAL", subtitle: "Meu foco principal", description: "Edição, CapCut Pro e storytelling visual." },
-  { icon: Megaphone, title: "MARKETING", subtitle: "Estratégia e presença digital", description: "Campanhas, social media e branding." },
-  { icon: Code2, title: "FORMAÇÃO", subtitle: "Meu diferencial técnico", description: "Bacharel em Sistemas de Informação." },
-  { icon: Gamepad2, title: "UNIVERSO NERD", subtitle: "Narrativa e referência", description: "Estética cinematográfica e storytelling." },
+  { icon: Clapperboard, title: "AUDIOVISUAL", subtitle: "Meu foco principal", description: "Edição, CapCut Pro e storytelling visual.", tags: ["Premiere Pro", "After Effects", "CapCut Pro", "Motion Graphics"] },
+  { icon: Megaphone, title: "MARKETING", subtitle: "Estratégia e presença digital", description: "Campanhas, social media e branding.", tags: ["Social Media", "Branding", "Copywriting", "Meta Ads"] },
+  { icon: Code2, title: "FORMAÇÃO", subtitle: "Meu diferencial técnico", description: "Bacharel em Sistemas de Informação.", tags: ["React", "TypeScript", "Tailwind CSS", "SQL"] },
+  { icon: Gamepad2, title: "UNIVERSO NERD", subtitle: "Narrativa e referência", description: "Estética cinematográfica e storytelling.", tags: ["Narrativa", "Ritmo", "Games", "Cinema"] },
 ];
 
 export const AboutSection = () => {
@@ -60,6 +60,13 @@ export const AboutSection = () => {
             </div>
           </div>
           <p className="text-sm text-muted-foreground">{item.description}</p>
+          <div className="flex flex-wrap gap-2 mt-4">
+            {item.tags.map((tag) => (
+              <span key={tag} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
         </motion.div>
       ))}
     </>
