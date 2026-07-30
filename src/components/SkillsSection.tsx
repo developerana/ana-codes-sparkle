@@ -82,7 +82,12 @@ export const SkillsSection = () => {
             </div>
           </div>
 
+          <p className="text-sm text-muted-foreground mb-5">
+            {category.description}
+          </p>
+
           <div className="flex flex-wrap gap-2">
+
             {category.skills.map((skill) => (
               <span key={skill} className="tag">
                 {skill}
