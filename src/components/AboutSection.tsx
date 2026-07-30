@@ -17,7 +17,7 @@ export const AboutSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
-        className="md:col-span-12 rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col justify-between gap-8 min-h-[280px]"
+        className="md:col-span-4 rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col justify-between gap-8 min-h-[420px]"
       >
         <h2 className="font-heading font-bold text-2xl tracking-tight">SOBRE</h2>
         <div className="space-y-4">
@@ -46,7 +46,7 @@ export const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.4, delay: index * 0.06 }}
-          className="md:col-span-4 bento bento-hover p-6 group"
+          className="md:col-span-3 bento bento-hover p-6 group"
         >
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
