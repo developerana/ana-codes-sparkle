@@ -16,8 +16,8 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <HeroSection />
           <AboutSection />
-          <ReelSection />
-          <SkillsSection />
+         {/* <ReelSection /> */}
+        {/* <SkillsSection /> */}
           <ExperienceSection />
           <ProjectsSection />
           <ContactSection />
