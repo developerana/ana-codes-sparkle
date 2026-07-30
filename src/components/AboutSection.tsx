@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Clapperboard, Megaphone, GraduationCap, Gamepad2 } from "lucide-react";
+import { ArrowRight, Clapperboard, Megaphone, GraduationCap } from "lucide-react";
 
 const highlights = [
   { icon: Clapperboard, title: "AUDIOVISUAL", subtitle: "Meu foco principal", description: "Edição, CapCut Pro e storytelling visual.", tags: ["Premiere Pro", "After Effects", "CapCut Pro", "Motion Graphics"] },
   { icon: Megaphone, title: "MARKETING", subtitle: "Estratégia e presença digital", description: "Campanhas, social media e branding.", tags: ["Social Media", "Branding", "Copywriting", "Meta Ads"] },
   { icon: GraduationCap, title: "FORMAÇÃO", subtitle: "Meu diferencial técnico", description: "Bacharel em Sistemas de Informação.", tags: ["React", "TypeScript", "Tailwind CSS", "SQL"] },
-  { icon: Gamepad2, title: "UNIVERSO NERD", subtitle: "Narrativa e referência", description: "Estética cinematográfica e storytelling.", tags: ["Narrativa", "Ritmo", "Games", "Cinema"] },
+  
 ];
 
 export const AboutSection = () => {
