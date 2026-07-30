@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clapperboard, Megaphone, Code2, Gamepad2 } from "lucide-react";
 
 const highlights = [
-  { icon: Clapperboard, title: "Audiovisual", description: "Edição, CapCut Pro e storytelling visual." },
-  { icon: Megaphone, title: "Marketing", description: "Campanhas, social media e branding." },
-  { icon: Code2, title: "Formação", description: "Bacharel em Sistemas de Informação." },
-  { icon: Gamepad2, title: "Universo Nerd", description: "Narrativa e estética cinematográfica." },
+  { icon: Clapperboard, title: "AUDIOVISUAL", subtitle: "Meu foco principal", description: "Edição, CapCut Pro e storytelling visual." },
+  { icon: Megaphone, title: "MARKETING", subtitle: "Estratégia e presença digital", description: "Campanhas, social media e branding." },
+  { icon: Code2, title: "FORMAÇÃO", subtitle: "Meu diferencial técnico", description: "Bacharel em Sistemas de Informação." },
+  { icon: Gamepad2, title: "UNIVERSO NERD", subtitle: "Narrativa e referência", description: "Estética cinematográfica e storytelling." },
 ];
 
 export const AboutSection = () => {
@@ -48,10 +48,17 @@ export const AboutSection = () => {
           transition={{ duration: 0.4, delay: index * 0.06 }}
           className="md:col-span-3 bento bento-hover p-6 group"
         >
-          <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-            <item.icon className="w-5 h-5 text-primary" />
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <item.icon className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-sm tracking-wide text-primary-glow">
+                {item.title}
+              </h3>
+              <p className="text-xs text-muted-foreground">{item.subtitle}</p>
+            </div>
           </div>
-          <h3 className="font-heading font-semibold mb-1">{item.title}</h3>
           <p className="text-sm text-muted-foreground">{item.description}</p>
         </motion.div>
       ))}
