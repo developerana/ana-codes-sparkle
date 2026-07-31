@@ -8,7 +8,7 @@ import {
   Linkedin,
   Instagram,
   GraduationCap,
-  Award,
+  
   Languages,
 } from "lucide-react";
 
@@ -93,14 +93,6 @@ const experiences = [
   },
 ];
 
-const certificates = [
-  { name: "Formação Arquiteto de Software", org: "Pensar Cursos" },
-  { name: "NLW Pocket: Javascript - Programação Iniciante", org: "Rocketseat" },
-  { name: "NLW Pocket: Javascript - Full-stack Intermediário", org: "Rocketseat" },
-  { name: "Gestão da Segurança da Informação", org: "Pensar Cursos" },
-  { name: "Governança e Gestão de TI", org: "Pensar Cursos" },
-  { name: "Imersão Front-End", org: "Alura" },
-];
 
 const competencies = [
   { name: "Desenvolvimento do front-end de aplicações", level: "Iniciante" },
@@ -265,27 +257,6 @@ const Curriculo = () => {
               <span>Inglês</span>
               <span className="tag">Intermediário</span>
             </div>
-          </section>
-
-          <section className="bento p-6 lg:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Award className="w-5 h-5 text-primary" />
-              </div>
-              <h2 className="font-heading text-xl font-bold tracking-tight">
-                CERTIFICADOS
-              </h2>
-            </div>
-            <ul className="space-y-4">
-              {certificates.map((cert) => (
-                <li key={cert.name}>
-                  <p className="font-heading text-sm font-semibold leading-tight">
-                    {cert.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{cert.org}</p>
-                </li>
-              ))}
-            </ul>
           </section>
         </div>
 
