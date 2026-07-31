@@ -251,15 +251,14 @@ const Curriculo = () => {
           <h2 className="font-heading text-xl font-bold tracking-tight mb-6">
             COMPETÊNCIAS
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="flex flex-wrap gap-2.5">
             {competencies.map((c) => (
-              <div
+              <span
                 key={c.name}
-                className="rounded-2xl bg-background border border-border/60 p-4"
+                className="inline-flex items-center rounded-full bg-background border border-border/60 px-4 py-2 text-sm leading-none"
               >
-                <p className="text-sm mb-2 leading-snug">{c.name}</p>
-                <span className="tag">{c.level}</span>
-              </div>
+                {c.name}
+              </span>
             ))}
           </div>
         </section>
