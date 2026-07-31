@@ -82,7 +82,7 @@ const Projetos = () => {
           </AnimatePresence>
         </motion.div>
       </main>
-      <Footer />
+      
     </div>
   );
 };
