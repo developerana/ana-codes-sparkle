@@ -103,24 +103,8 @@ const competencies = [
   { name: "Notion", level: "Intermediário" },
 ];
 
-const contacts = [
-  { icon: Phone, label: "(35) 99728-0511", href: "tel:+5535997280511" },
-  {
-    icon: Mail,
-    label: "anahelouise.ss@gmail.com",
-    href: "mailto:anahelouise.ss@gmail.com",
-  },
-  {
-    icon: Linkedin,
-    label: "linkedin.com/in/anahelouise",
-    href: "https://www.linkedin.com/in/anahelouise/",
-  },
-  {
-    icon: Instagram,
-    label: "@overlouise",
-    href: "https://www.instagram.com/overlouise/",
-  },
-];
+
+
 
 const Curriculo = () => {
   useEffect(() => {
