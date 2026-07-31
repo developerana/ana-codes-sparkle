@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, GraduationCap } from "lucide-react";
+import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
 const experiences = [
@@ -212,6 +213,9 @@ const Curriculo = () => {
             ))}
           </div>
         </section>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
+          <ContactSection />
+        </div>
       </main>
       <Footer />
     </div>
