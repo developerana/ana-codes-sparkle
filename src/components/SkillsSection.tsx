@@ -73,7 +73,7 @@ export const SkillsSection = () => {
               <category.icon className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-heading font-bold text-sm tracking-wide text-primary-glow">
+              <h3 className="font-heading font-bold text-sm tracking-wide text-primary">
                 {category.title}
               </h3>
               <p className="text-xs text-muted-foreground">
