@@ -28,7 +28,7 @@ const contactInfo = [
   },
 ];
 
-export const ContactSection = () => {
+export const ContactSection = ({ showHeading = true }: { showHeading?: boolean }) => {
   return (
     <>
       <motion.section
@@ -39,15 +39,17 @@ export const ContactSection = () => {
         transition={{ duration: 0.5 }}
         className="md:col-span-12 rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col md:flex-row md:items-center justify-between gap-8"
       >
-        <div>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
-            VAMOS TRABALHAR JUNTOS?
-          </h2>
-          <p className="font-medium mt-3 opacity-90">
-            Estou aberta a novas oportunidades e adoraria ouvir sobre o seu
-            projeto.
-          </p>
-        </div>
+        {showHeading && (
+          <div>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
+              VAMOS TRABALHAR JUNTOS?
+            </h2>
+            <p className="font-medium mt-3 opacity-90">
+              Estou aberta a novas oportunidades e adoraria ouvir sobre o seu
+              projeto.
+            </p>
+          </div>
+        )}
 
         <div className="grid sm:grid-cols-2 gap-4 md:min-w-[380px]">
           {contactInfo.map((info) => (
