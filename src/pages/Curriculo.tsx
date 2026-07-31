@@ -124,9 +124,9 @@ const Curriculo = () => {
           transition={{ duration: 0.4 }}
           className="bento p-6 lg:p-10 mb-4"
         >
-          <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-3">
+          <h1 className="font-heading text-3xl md:text-4xl uppercase tracking-tight text-primary font-bold mb-3">
             Currículo & Experiência
-          </p>
+          </h1>
           <p className="text-muted-foreground">
             Trajetória profissional, formação acadêmica e habilidades. Bacharel em
             Sistemas de Informação.
