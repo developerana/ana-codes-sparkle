@@ -52,8 +52,7 @@ export const ExperienceSection = () => {
       </h2>
 
       <div className="space-y-6">
-
-        {experiences.map((exp, index) => (
+        {visible.map((exp, index) => (
           <motion.div
             key={exp.title}
             initial={{ opacity: 0, x: -16 }}
@@ -83,6 +82,15 @@ export const ExperienceSection = () => {
             </p>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-auto pt-6 flex justify-center">
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+        >
+          {expanded ? "VER MENOS" : "VER EXPERIÊNCIA"}
+        </button>
       </div>
     </section>
   );
