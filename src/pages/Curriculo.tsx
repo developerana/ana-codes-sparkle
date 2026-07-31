@@ -107,8 +107,8 @@ const Curriculo = () => {
 
 
   return (
-    <div className="min-h-screen bg-background">
-      <main className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16">
+    <div className="min-h-screen bg-background flex flex-col">
+      <main className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16 w-full flex-1">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-xs font-bold text-muted-foreground hover:text-primary transition-colors mb-8"

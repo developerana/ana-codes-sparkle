@@ -5,7 +5,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="max-w-7xl mx-auto px-4 md:px-8 py-10">
+    <footer className="w-full max-w-7xl mx-auto px-4 md:px-8 py-10">
       <div className="flex flex-row items-center justify-between gap-4">
         <motion.p
           initial={{ opacity: 0 }}
