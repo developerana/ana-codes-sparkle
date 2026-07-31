@@ -8,6 +8,7 @@ import {
   Palette,
   Code2,
   Gamepad2,
+  Play,
 } from "lucide-react";
 
 type Category = "Todos" | "Vídeos" | "Marketing" | "Design" | "Web" | "Games";
@@ -36,22 +37,33 @@ type Project = {
   tags: string[];
   github?: string;
   demo?: string;
+  /** Video projects: shows a player-style preview card */
+  kicker?: string;
+  duration?: string;
+  client?: string;
+  videoUrl?: string;
 };
 
 const projects: Project[] = [
   {
     title: "Campanha Institucional",
     category: "Vídeos",
+    kicker: "Vídeo Institucional",
+    duration: "01:20",
+    client: "UNIVETS Saúde Animal",
     description:
-      "Vídeo institucional para clínica veterinária: roteiro, captação, edição, motion e finalização.",
-    tags: ["Premiere Pro", "After Effects", "Motion"],
+      "Vídeo institucional para clínica veterinária, do roteiro à finalização.",
+    tags: ["Premiere Pro", "After Effects"],
   },
   {
     title: "Reels para Instagram",
     category: "Vídeos",
+    kicker: "Social Media",
+    duration: "00:30",
+    client: "UNIVETS Saúde Animal",
     description:
       "Produção contínua de Reels com cortes dinâmicos, legendas animadas e trilha sincronizada.",
-    tags: ["CapCut Pro", "Premiere Pro", "Social Media"],
+    tags: ["CapCut Pro", "Premiere Pro"],
   },
   {
     title: "Motion Graphics",
@@ -77,6 +89,8 @@ const projects: Project[] = [
   {
     title: "Trailer Gamer",
     category: "Games",
+    kicker: "Trailer",
+    duration: "01:05",
     description:
       "Edição em ritmo cinematográfico com sound design, color grading e transições inspiradas em trailers de games.",
     tags: ["Premiere Pro", "DaVinci Resolve", "Sound Design"],
@@ -169,6 +183,7 @@ export const ProjectsSection = () => {
         <AnimatePresence mode="popLayout">
           {visible.map((project, index) => {
             const Icon = categoryIcons[project.category] ?? Film;
+            const isVideo = Boolean(project.duration);
             return (
               <motion.article
                 key={project.title}
@@ -179,45 +194,72 @@ export const ProjectsSection = () => {
                 transition={{ duration: 0.3, delay: index * 0.03 }}
                 className="group rounded-2xl bg-background border border-border/60 hover:border-primary/40 transition-colors p-5 flex flex-col"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Icon className="w-4 h-4 text-primary" />
+                {isVideo ? (
+                  <div className="relative mb-4 rounded-xl overflow-hidden aspect-video bg-gradient-to-br from-primary/25 via-background to-background border border-border/60">
+                    <div
+                      className="absolute inset-0 opacity-40"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(hsl(var(--primary) / 0.25) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.25) 1px, transparent 1px)",
+                        backgroundSize: "28px 28px",
+                      }}
+                    />
+                    <span className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-background/80 backdrop-blur text-[10px] font-bold text-foreground">
+                      {project.duration}
+                    </span>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                        <Play className="w-5 h-5 text-primary-foreground fill-current ml-0.5" />
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex gap-2">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                        aria-label="Ver código no GitHub"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label={`Ver projeto ${project.title}`}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
+                ) : (
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex gap-2">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-foreground transition-colors"
+                          aria-label="Ver código no GitHub"
+                        >
+                          <Github className="w-4 h-4" />
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                          aria-label={`Ver projeto ${project.title}`}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <p className="text-[10px] uppercase tracking-wider text-primary font-bold mb-1">
-                  {project.category}
+                  {project.kicker ?? project.category}
                 </p>
                 <h3 className="font-heading font-semibold leading-tight mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2 flex-grow">
                   {project.description}
                 </p>
+                {project.client && (
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Cliente:{" "}
+                    <span className="text-primary">{project.client}</span>
+                  </p>
+                )}
 
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
@@ -227,6 +269,7 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
               </motion.article>
+
             );
           })}
         </AnimatePresence>
