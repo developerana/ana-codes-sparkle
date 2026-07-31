@@ -138,8 +138,9 @@ export const ProjectsSection = () => {
       ? projects
       : projects.filter((p) => p.category === active);
 
-  const visible = expanded ? filtered : filtered.slice(0, 6);
-  const hasMore = filtered.length > 6;
+  const limit = filtered.slice(0, 6).some((p) => p.duration) ? 4 : 6;
+  const visible = expanded ? filtered : filtered.slice(0, limit);
+  const hasMore = filtered.length > limit;
 
 
   return (
