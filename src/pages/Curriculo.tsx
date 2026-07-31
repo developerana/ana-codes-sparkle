@@ -8,7 +8,7 @@ import {
   Linkedin,
   Instagram,
   GraduationCap,
-  Award,
+  
   Languages,
 } from "lucide-react";
 
@@ -93,14 +93,6 @@ const experiences = [
   },
 ];
 
-const certificates = [
-  { name: "Formação Arquiteto de Software", org: "Pensar Cursos" },
-  { name: "NLW Pocket: Javascript - Programação Iniciante", org: "Rocketseat" },
-  { name: "NLW Pocket: Javascript - Full-stack Intermediário", org: "Rocketseat" },
-  { name: "Gestão da Segurança da Informação", org: "Pensar Cursos" },
-  { name: "Governança e Gestão de TI", org: "Pensar Cursos" },
-  { name: "Imersão Front-End", org: "Alura" },
-];
 
 const competencies = [
   { name: "Desenvolvimento do front-end de aplicações", level: "Iniciante" },
