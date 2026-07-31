@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 
 import { ProjectCard } from "@/components/ProjectCard";
-import { FilterPill } from "@/components/FilterPill";
 import { Footer } from "@/components/Footer";
 import { filters, projects, type Category } from "@/data/projects";
 
@@ -44,16 +43,29 @@ const Projetos = () => {
         </p>
 
         <div className="flex flex-wrap gap-2 mb-8">
-          {filters.map((filter) => (
-            <FilterPill
-              key={filter}
-              label={filter.toUpperCase()}
-              isActive={active === filter}
-              layoutId="all-projects-filter-pill"
-              size="md"
-              onClick={() => setActive(filter)}
-            />
-          ))}
+          {filters.map((filter) => {
+            const isActive = active === filter;
+            return (
+              <button
+                key={filter}
+                onClick={() => setActive(filter)}
+                className={`relative px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${
+                  isActive
+                    ? "text-primary-foreground"
+                    : "bg-muted/60 text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="all-projects-filter-pill"
+                    className="absolute inset-0 rounded-full bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative">{filter.toUpperCase()}</span>
+              </button>
+            );
+          })}
         </div>
 
         <motion.div
@@ -63,7 +75,7 @@ const Projetos = () => {
           <AnimatePresence mode="popLayout">
             {filtered.slice(0, 9).map((project, index) => (
               <ProjectCard
-                key={`${active}-${project.title}`}
+                key={project.title}
                 project={project}
                 index={index}
               />
