@@ -38,15 +38,6 @@ const experiences = [
     icon: Briefcase,
     current: false,
   },
-  {
-    title: "Site de Saúde Mental",
-    company: "Escola Estadual Nossa Senhora de Lourdes",
-    period: "2018 - 2020",
-    description:
-      "Criei o site “Corrente do Bem” para apoiar pessoas lidando com depressão e ansiedade, e palestrei sobre o projeto.",
-    icon: Briefcase,
-    current: false,
-  },
 ];
 
 export const ExperienceSection = () => {
