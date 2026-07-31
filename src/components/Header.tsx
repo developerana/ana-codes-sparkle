@@ -44,7 +44,7 @@ export const Header = () => {
           className="text-xl font-heading font-bold gradient-text"
           whileHover={{ scale: 1.05 }}
         >
-          AH
+          Ana Helouise
         </motion.a>
 
         {/* Desktop Navigation */}
