@@ -117,11 +117,16 @@ const projects: Project[] = [
 
 export const ProjectsSection = () => {
   const [active, setActive] = useState<Category>("Todos");
+  const [expanded, setExpanded] = useState(false);
 
-  const visible =
+  const filtered =
     active === "Todos"
       ? projects
       : projects.filter((p) => p.category === active);
+
+  const visible = expanded ? filtered : filtered.slice(0, 6);
+  const hasMore = filtered.length > 6;
+
 
   return (
     <section id="projects" className="md:col-span-7 bento p-6 lg:p-8 flex flex-col">
