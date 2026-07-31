@@ -8,6 +8,7 @@ import {
   Palette,
   Code2,
   Gamepad2,
+  Play,
 } from "lucide-react";
 
 type Category = "Todos" | "Vídeos" | "Marketing" | "Design" | "Web" | "Games";
