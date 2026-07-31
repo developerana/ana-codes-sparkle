@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import { Footer } from "@/components/Footer";
+
 import { ProjectCard } from "@/components/ProjectCard";
 import { filters, projects, type Category } from "@/data/projects";
 
@@ -82,7 +82,7 @@ const Projetos = () => {
           </AnimatePresence>
         </motion.div>
       </main>
-      <Footer />
+      
     </div>
   );
 };
