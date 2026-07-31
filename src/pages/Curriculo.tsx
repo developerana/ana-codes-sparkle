@@ -6,7 +6,7 @@ import {
   Mail,
   Phone,
   Linkedin,
-  MapPin,
+  Instagram,
   GraduationCap,
   Award,
   Languages,
@@ -126,7 +126,11 @@ const contacts = [
     label: "linkedin.com/in/anahelouise",
     href: "https://www.linkedin.com/in/anahelouise/",
   },
-  { icon: MapPin, label: "Maria da Fé, Brasil" },
+  {
+    icon: Instagram,
+    label: "@overlouise",
+    href: "https://www.instagram.com/overlouise/",
+  },
 ];
 
 const Curriculo = () => {
