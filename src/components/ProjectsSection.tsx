@@ -25,9 +25,12 @@ export const ProjectsSection = () => {
           {filters.map((filter) => {
             const isActive = active === filter;
             return (
-              <button
+              <motion.button
                 key={filter}
                 onClick={() => setActive(filter)}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
+                transition={{ type: "spring", stiffness: 500, damping: 28 }}
                 className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isActive
                     ? "text-primary-foreground"
@@ -37,12 +40,18 @@ export const ProjectsSection = () => {
                 {isActive && (
                   <motion.span
                     layoutId="project-filter-pill"
-                    className="absolute inset-0 rounded-full bg-primary"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute inset-0 rounded-full bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.45)]"
+                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
                   />
                 )}
-                <span className="relative">{filter.toUpperCase()}</span>
-              </button>
+                <motion.span
+                  className="relative"
+                  animate={{ scale: isActive ? 1.04 : 1 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 24 }}
+                >
+                  {filter.toUpperCase()}
+                </motion.span>
+              </motion.button>
             );
           })}
         </div>
@@ -51,7 +60,11 @@ export const ProjectsSection = () => {
       <motion.div layout className="grid sm:grid-cols-2 gap-4">
         <AnimatePresence mode="popLayout">
           {visible.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <ProjectCard
+              key={`${active}-${project.title}`}
+              project={project}
+              index={index}
+            />
           ))}
         </AnimatePresence>
       </motion.div>
