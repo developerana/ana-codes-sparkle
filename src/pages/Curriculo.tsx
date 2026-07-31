@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -129,6 +130,11 @@ const contacts = [
 ];
 
 const Curriculo = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-background">
       <main className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-16">
