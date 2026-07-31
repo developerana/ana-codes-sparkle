@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, GraduationCap } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const experiences = [
   {
@@ -212,6 +213,7 @@ const Curriculo = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
