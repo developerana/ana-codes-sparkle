@@ -9,13 +9,10 @@ const skillCategories = [
       "Edição, motion e finalização de vídeos para redes sociais e campanhas, do roteiro ao corte final.",
     icon: Clapperboard,
     skills: [
-      "Adobe Premiere Pro",
       "After Effects",
       "CapCut Pro",
-      "DaVinci Resolve",
       "Motion Graphics",
       "Color Grading",
-      "Sound Design",
     ],
   },
   {
@@ -28,8 +25,6 @@ const skillCategories = [
       "Social Media",
       "Branding",
       "Copywriting",
-      "Meta Ads",
-      "Estratégia Digital",
       "Planejamento de Campanhas",
       "Adobe Photoshop",
       "Canva",
