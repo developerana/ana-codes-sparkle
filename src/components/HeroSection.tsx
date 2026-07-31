@@ -51,11 +51,10 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.12 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
+          className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed whitespace-pre-line"
         >
-          Editora de vídeo, marketing e desenvolvimento. Transformando ideias em
-          experiências visuais — do roteiro ao corte final, da campanha à
-          interface.
+          Editora de vídeo, marketing e desenvolvimento.{"\u00a0"}{"\n"}
+          Bacharel em Sistemas de Informação
         </motion.p>
 
         <motion.div
