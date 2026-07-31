@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 
 import { ProjectCard } from "@/components/ProjectCard";
 import { Footer } from "@/components/Footer";
+import { FilterPill } from "@/components/FilterPill";
 import { filters, projects, type Category } from "@/data/projects";
 
 const Projetos = () => {
