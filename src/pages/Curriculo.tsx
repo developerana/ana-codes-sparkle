@@ -148,9 +148,6 @@ const Curriculo = () => {
           <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-3">
             Currículo & Experiência
           </p>
-          <h1 className="font-heading text-3xl md:text-5xl font-bold tracking-tight mb-3">
-            Ana Helouise de Souza Silva
-          </h1>
           <p className="text-muted-foreground mb-6">
             Trajetória profissional, formação acadêmica e habilidades. Bacharel em
             Sistemas de Informação.
