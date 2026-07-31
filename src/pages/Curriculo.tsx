@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, GraduationCap } from "lucide-react";
-import { ContactSection } from "@/components/ContactSection";
+
 import { Footer } from "@/components/Footer";
 
 const experiences = [
