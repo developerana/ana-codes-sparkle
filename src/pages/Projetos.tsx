@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 
 import { ProjectCard } from "@/components/ProjectCard";
+import { Footer } from "@/components/Footer";
 import { filters, projects, type Category } from "@/data/projects";
 
 const Projetos = () => {
@@ -82,7 +83,7 @@ const Projetos = () => {
           </AnimatePresence>
         </motion.div>
       </main>
-      
+      <Footer />
     </div>
   );
 };
