@@ -22,41 +22,17 @@ export const ProjectsSection = () => {
           PROJETOS
         </h2>
         <div className="flex flex-wrap gap-2">
-          {filters.map((filter) => {
-            const isActive = active === filter;
-            return (
-              <motion.button
-                key={filter}
-                onClick={() => setActive(filter)}
-                whileHover={{ scale: 1.06, y: -1 }}
-                whileTap={{ scale: 0.94 }}
-                transition={{ type: "spring", stiffness: 500, damping: 22 }}
-                className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
-                  isActive
-                    ? "text-primary-foreground"
-                    : "bg-muted/60 text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="project-filter-pill"
-                    className="absolute inset-0 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.55)]"
-                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
-                  />
-                )}
-                <motion.span
-                  key={`${filter}-${isActive}`}
-                  initial={isActive ? { scale: 0.9 } : false}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 18 }}
-                  className="relative"
-                >
-                  {filter.toUpperCase()}
-                </motion.span>
-              </motion.button>
-            );
-          })}
+          {filters.map((filter) => (
+            <FilterPill
+              key={filter}
+              label={filter}
+              isActive={active === filter}
+              layoutId="project-filter-pill"
+              onClick={() => setActive(filter)}
+            />
+          ))}
         </div>
+
       </div>
 
       <motion.div layout className="grid sm:grid-cols-2 gap-4">
