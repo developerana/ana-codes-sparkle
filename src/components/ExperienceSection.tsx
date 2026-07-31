@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Briefcase, GraduationCap, Clapperboard } from "lucide-react";
 
 const experiences = [
@@ -51,17 +50,14 @@ const experiences = [
 ];
 
 export const ExperienceSection = () => {
-  const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? experiences : experiences.slice(0, 3);
-
   return (
-    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8 flex flex-col">
+    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8">
       <h2 className="font-heading text-2xl font-bold tracking-tight mb-8">
         EXPERIÊNCIA
       </h2>
 
       <div className="space-y-6">
-        {visible.map((exp, index) => (
+        {experiences.map((exp, index) => (
           <motion.div
             key={exp.title}
             initial={{ opacity: 0, x: -16 }}
@@ -91,15 +87,6 @@ export const ExperienceSection = () => {
             </p>
           </motion.div>
         ))}
-      </div>
-
-      <div className="mt-auto pt-6 flex justify-center">
-        <button
-          onClick={() => setExpanded((v) => !v)}
-          className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-        >
-          {expanded ? "VER MENOS" : "VER EXPERIÊNCIA"}
-        </button>
       </div>
     </section>
   );
