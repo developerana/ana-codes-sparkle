@@ -148,34 +148,10 @@ const Curriculo = () => {
           <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-3">
             Currículo & Experiência
           </p>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-muted-foreground">
             Trajetória profissional, formação acadêmica e habilidades. Bacharel em
             Sistemas de Informação.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
-            {contacts.map(({ icon: Icon, label, href }) =>
-              href ? (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Icon className="w-4 h-4 text-primary" />
-                  {label}
-                </a>
-              ) : (
-                <span
-                  key={label}
-                  className="inline-flex items-center gap-2 text-sm text-muted-foreground"
-                >
-                  <Icon className="w-4 h-4 text-primary" />
-                  {label}
-                </span>
-              )
-            )}
-          </div>
         </motion.header>
 
         <section className="bento p-6 lg:p-10 mb-4">
