@@ -25,9 +25,12 @@ export const ProjectsSection = () => {
           {filters.map((filter) => {
             const isActive = active === filter;
             return (
-              <button
+              <motion.button
                 key={filter}
                 onClick={() => setActive(filter)}
+                whileHover={{ scale: 1.06, y: -1 }}
+                whileTap={{ scale: 0.94 }}
+                transition={{ type: "spring", stiffness: 500, damping: 22 }}
                 className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isActive
                     ? "text-primary-foreground"
@@ -37,12 +40,20 @@ export const ProjectsSection = () => {
                 {isActive && (
                   <motion.span
                     layoutId="project-filter-pill"
-                    className="absolute inset-0 rounded-full bg-primary"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute inset-0 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.55)]"
+                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
                   />
                 )}
-                <span className="relative">{filter.toUpperCase()}</span>
-              </button>
+                <motion.span
+                  key={`${filter}-${isActive}`}
+                  initial={isActive ? { scale: 0.9 } : false}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 18 }}
+                  className="relative"
+                >
+                  {filter.toUpperCase()}
+                </motion.span>
+              </motion.button>
             );
           })}
         </div>
