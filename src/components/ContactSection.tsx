@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { Mail, Instagram, Linkedin, Github } from "lucide-react";
 
 const contactInfo = [
   {
@@ -8,7 +8,12 @@ const contactInfo = [
     value: "anahelouise.ss@email.com",
     href: "mailto:anahelouise.ss@email.com",
   },
-  { icon: MapPin, label: "Localização", value: "Brasil", href: null },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    value: "@overlouise",
+    href: "https://www.instagram.com/overlouise/",
+  },
   {
     icon: Linkedin,
     label: "LinkedIn",
