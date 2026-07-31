@@ -23,7 +23,7 @@ export const AboutSection = () => {
         </p>
       </div>
       <a
-        href="#reel"
+        href="#projects"
         aria-label="Ver trabalhos"
         className="w-11 h-11 rounded-full bg-background text-primary flex items-center justify-center hover:scale-105 transition-transform"
       >

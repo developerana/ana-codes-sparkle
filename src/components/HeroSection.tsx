@@ -65,7 +65,7 @@ export const HeroSection = () => {
           className="flex flex-wrap items-center gap-3 mt-8"
         >
           <Button variant="hero" size="lg" asChild>
-            <a href="#reel">Ver Meus Trabalhos</a>
+            <a href="#projects">Ver Meus Trabalhos</a>
           </Button>
           <Button variant="heroOutline" size="lg" asChild>
             <a href="#contact">Vamos Criar Juntos</a>
