@@ -266,27 +266,6 @@ const Curriculo = () => {
               <span className="tag">Intermediário</span>
             </div>
           </section>
-
-          <section className="bento p-6 lg:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Award className="w-5 h-5 text-primary" />
-              </div>
-              <h2 className="font-heading text-xl font-bold tracking-tight">
-                CERTIFICADOS
-              </h2>
-            </div>
-            <ul className="space-y-4">
-              {certificates.map((cert) => (
-                <li key={cert.name}>
-                  <p className="font-heading text-sm font-semibold leading-tight">
-                    {cert.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{cert.org}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
         </div>
 
         <section className="bento p-6 lg:p-8 mt-4">
