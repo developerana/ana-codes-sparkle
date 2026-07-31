@@ -44,7 +44,7 @@ export const Footer = () => {
             <Mail className="w-5 h-5" />
           </a>
           <a
-            href="https://www.instagram.com/anahelouise/"
+            href="https://www.instagram.com/overlouise/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
