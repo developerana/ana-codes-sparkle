@@ -1,137 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import {
-  ExternalLink,
-  Github,
-  Film,
-  Megaphone,
-  Palette,
-  Code2,
-  Gamepad2,
-  Play,
-} from "lucide-react";
-
-type Category = "Todos" | "Vídeos" | "Marketing" | "Design" | "Web" | "Games";
-
-const categoryIcons: Record<string, typeof Film> = {
-  Vídeos: Film,
-  Marketing: Megaphone,
-  Design: Palette,
-  Web: Code2,
-  Games: Gamepad2,
-};
-
-const filters: Category[] = [
-  "Todos",
-  "Vídeos",
-  "Marketing",
-  "Design",
-  "Web",
-  "Games",
-];
-
-type Project = {
-  title: string;
-  category: Exclude<Category, "Todos">;
-  description: string;
-  tags: string[];
-  github?: string;
-  demo?: string;
-  /** Video projects: shows a player-style preview card */
-  kicker?: string;
-  duration?: string;
-  client?: string;
-  videoUrl?: string;
-};
-
-const projects: Project[] = [
-  {
-    title: "Campanha Institucional",
-    category: "Vídeos",
-    kicker: "Vídeo Institucional",
-    duration: "01:20",
-    client: "UNIVETS Saúde Animal",
-    description:
-      "Vídeo institucional para clínica veterinária, do roteiro à finalização.",
-    tags: ["Premiere Pro", "After Effects"],
-  },
-  {
-    title: "Reels para Instagram",
-    category: "Vídeos",
-    kicker: "Social Media",
-    duration: "00:30",
-    client: "UNIVETS Saúde Animal",
-    description:
-      "Produção contínua de Reels com cortes dinâmicos, legendas animadas e trilha sincronizada.",
-    tags: ["CapCut Pro", "Premiere Pro"],
-  },
-  {
-    title: "Motion Graphics",
-    category: "Design",
-    description:
-      "Aberturas, lower thirds e animações de logo para reforçar a identidade visual das marcas.",
-    tags: ["After Effects", "Illustrator", "Branding"],
-  },
-  {
-    title: "Gestão de Redes Sociais",
-    category: "Marketing",
-    description:
-      "Planejamento editorial, criação de conteúdo, copywriting e métricas para a UNIVETS Saúde Animal.",
-    tags: ["Social Media", "Copywriting", "Meta Ads"],
-  },
-  {
-    title: "Identidade Visual",
-    category: "Design",
-    description:
-      "Identidade visual e materiais gráficos, digitais e impressos, com consistência em todos os pontos de contato.",
-    tags: ["Photoshop", "Illustrator", "Branding"],
-  },
-  {
-    title: "Trailer Gamer",
-    category: "Games",
-    kicker: "Trailer",
-    duration: "01:05",
-    description:
-      "Edição em ritmo cinematográfico com sound design, color grading e transições inspiradas em trailers de games.",
-    tags: ["Premiere Pro", "DaVinci Resolve", "Sound Design"],
-  },
-  {
-    title: "Sistema T21 Arena Park",
-    category: "Web",
-    description:
-      "Sistema de gestão de atletas com Síndrome de Down: informações pessoais, anamnese e monitoramento.",
-    tags: ["React", "Prisma", "Tailwind CSS"],
-    demo: "https://t21-arena-park.com/",
-  },
-  {
-    title: "Núcleo Mariense de Letras",
-    category: "Web",
-    description:
-      "Site para um coletivo cultural de Maria da Fé - MG, promovendo a arte local em suas diversas formas.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    demo: "https://anahelouise.github.io/numale/",
-  },
-  {
-    title: "E-commerce Opção Vidraçaria",
-    category: "Web",
-    description:
-      "Loja virtual para uma vidraçaria: apresentação, serviços, orçamentos e produtos, com foco em UX.",
-    tags: ["TypeScript", "React", "Vite"],
-    demo: "https://opcaovidracaria.vercel.app/",
-  },
-  {
-    title: "Attack On Titan Wiki",
-    category: "Games",
-    description:
-      "Enciclopédia do universo de Shingeki no Kyojin, unindo cultura pop e desenvolvimento web.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    demo: "https://anahelouise.github.io/attackontitanwiki/",
-  },
-];
+import { Link } from "react-router-dom";
+import { ProjectCard } from "@/components/ProjectCard";
+import { filters, projects, type Category } from "@/data/projects";
 
 export const ProjectsSection = () => {
   const [active, setActive] = useState<Category>("Todos");
-  const [expanded, setExpanded] = useState(false);
 
   const filtered =
     active === "Todos"
@@ -139,9 +13,7 @@ export const ProjectsSection = () => {
       : projects.filter((p) => p.category === active);
 
   const limit = filtered.slice(0, 6).some((p) => p.duration) ? 4 : 6;
-  const visible = expanded ? filtered : filtered.slice(0, limit);
-  const hasMore = filtered.length > limit;
-
+  const visible = filtered.slice(0, limit);
 
   return (
     <section id="projects" className="md:col-span-7 bento p-6 lg:p-8 flex flex-col">
@@ -155,11 +27,7 @@ export const ProjectsSection = () => {
             return (
               <button
                 key={filter}
-                onClick={() => {
-                  setActive(filter);
-                  setExpanded(false);
-                }}
-
+                onClick={() => setActive(filter)}
                 className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isActive
                     ? "text-primary-foreground"
@@ -182,122 +50,20 @@ export const ProjectsSection = () => {
 
       <motion.div layout className="grid sm:grid-cols-2 gap-4">
         <AnimatePresence mode="popLayout">
-          {visible.map((project, index) => {
-            const Icon = categoryIcons[project.category] ?? Film;
-            const isVideo = Boolean(project.duration);
-            return (
-              <motion.article
-                key={project.title}
-                layout
-                initial={{ opacity: 0, y: 16, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
-                className={`group rounded-2xl bg-background border border-border/60 hover:border-primary/40 transition-all duration-300 p-5 flex flex-col ${
-                  isVideo ? "cursor-pointer hover:-translate-y-1" : ""
-                }`}
-              >
-                {isVideo ? (
-                  <div className="relative mb-4 rounded-xl overflow-hidden aspect-video bg-gradient-to-br from-primary/25 via-background to-background border border-border/60">
-                    <div
-                      className="absolute inset-0 opacity-40 transition-all duration-500 group-hover:opacity-70 group-hover:scale-105"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(hsl(var(--primary) / 0.25) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.25) 1px, transparent 1px)",
-                        backgroundSize: "28px 28px",
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10" />
-                    <span className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-background/80 backdrop-blur text-[10px] font-bold text-foreground transition-opacity duration-300 group-hover:opacity-0">
-                      {project.duration}
-                    </span>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg transition-all duration-300 ease-out scale-90 opacity-80 group-hover:scale-110 group-hover:opacity-100 group-hover:shadow-[0_0_28px_hsl(var(--primary)/0.55)]">
-                        <Play className="w-5 h-5 text-primary-foreground fill-current ml-0.5" />
-                      </span>
-                    </div>
-                    <span className="absolute bottom-0 left-0 right-0 z-10 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-foreground bg-gradient-to-t from-background to-transparent translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                      Assistir · {project.duration}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="flex gap-2">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-foreground transition-colors"
-                          aria-label="Ver código no GitHub"
-                        >
-                          <Github className="w-4 h-4" />
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label={`Ver projeto ${project.title}`}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                <p className="text-[10px] uppercase tracking-wider text-primary font-bold mb-1">
-                  {project.kicker ?? project.category}
-                </p>
-                <h3 className="font-heading font-semibold leading-tight mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2 flex-grow">
-                  {project.description}
-                </p>
-                {project.client && (
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Cliente:{" "}
-                    <span className="text-primary">{project.client}</span>
-                  </p>
-                )}
-
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.article>
-
-            );
-          })}
+          {visible.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
         </AnimatePresence>
       </motion.div>
 
       <div className="mt-auto pt-6 flex justify-center">
-        <button
-          onClick={() => {
-            if (hasMore) {
-              setExpanded((v) => !v);
-            } else {
-              setActive("Todos");
-              setExpanded(true);
-            }
-          }}
+        <Link
+          to="/projetos"
           className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
         >
-          {expanded && hasMore ? "VER MENOS" : "VER PROJETOS"}
-        </button>
+          VER PROJETOS
+        </Link>
       </div>
-
     </section>
   );
 };
