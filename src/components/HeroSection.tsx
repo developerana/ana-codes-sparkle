@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Instagram, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 
 const roles = ["Edição de Vídeos", "Marketing", "Desenvolvimento"];
 
