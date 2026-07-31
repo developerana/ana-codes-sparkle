@@ -36,22 +36,33 @@ type Project = {
   tags: string[];
   github?: string;
   demo?: string;
+  /** Video projects: shows a player-style preview card */
+  kicker?: string;
+  duration?: string;
+  client?: string;
+  videoUrl?: string;
 };
 
 const projects: Project[] = [
   {
     title: "Campanha Institucional",
     category: "Vídeos",
+    kicker: "Vídeo Institucional",
+    duration: "01:20",
+    client: "UNIVETS Saúde Animal",
     description:
-      "Vídeo institucional para clínica veterinária: roteiro, captação, edição, motion e finalização.",
-    tags: ["Premiere Pro", "After Effects", "Motion"],
+      "Vídeo institucional para clínica veterinária, do roteiro à finalização.",
+    tags: ["Premiere Pro", "After Effects"],
   },
   {
     title: "Reels para Instagram",
     category: "Vídeos",
+    kicker: "Social Media",
+    duration: "00:30",
+    client: "UNIVETS Saúde Animal",
     description:
       "Produção contínua de Reels com cortes dinâmicos, legendas animadas e trilha sincronizada.",
-    tags: ["CapCut Pro", "Premiere Pro", "Social Media"],
+    tags: ["CapCut Pro", "Premiere Pro"],
   },
   {
     title: "Motion Graphics",
@@ -77,6 +88,8 @@ const projects: Project[] = [
   {
     title: "Trailer Gamer",
     category: "Games",
+    kicker: "Trailer",
+    duration: "01:05",
     description:
       "Edição em ritmo cinematográfico com sound design, color grading e transições inspiradas em trailers de games.",
     tags: ["Premiere Pro", "DaVinci Resolve", "Sound Design"],
