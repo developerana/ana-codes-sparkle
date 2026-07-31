@@ -28,7 +28,7 @@ const contactInfo = [
   },
 ];
 
-export const ContactSection = ({ showHeading = true }: { showHeading?: boolean }) => {
+export const ContactSection = () => {
   return (
     <>
       <motion.section
@@ -37,27 +37,19 @@ export const ContactSection = ({ showHeading = true }: { showHeading?: boolean }
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5 }}
-        className="md:col-span-12 rounded-3xl bg-primary text-primary-foreground p-8 md:p-10 grid gap-8 md:gap-12 md:grid-cols-2 md:items-center"
+        className="md:col-span-12 rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col md:flex-row md:items-center justify-between gap-8"
       >
-        {showHeading && (
-          <div className="max-w-md">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
-              VAMOS TRABALHAR JUNTOS?
-            </h2>
-            <p className="font-medium mt-3 opacity-90">
-              Estou aberta a novas oportunidades e adoraria ouvir sobre o seu
-              projeto.
-            </p>
-          </div>
-        )}
+        <div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
+            VAMOS TRABALHAR JUNTOS?
+          </h2>
+          <p className="font-medium mt-3 opacity-90">
+            Estou aberta a novas oportunidades e adoraria ouvir sobre o seu
+            projeto.
+          </p>
+        </div>
 
-        <div
-          className={
-            showHeading
-              ? "grid sm:grid-cols-2 gap-x-8 gap-y-6"
-              : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:col-span-2 w-full"
-          }
-        >
+        <div className="grid sm:grid-cols-2 gap-4 md:min-w-[380px]">
           {contactInfo.map((info) => (
             <div key={info.label} className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-background/15 flex items-center justify-center">

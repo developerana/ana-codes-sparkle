@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, GraduationCap } from "lucide-react";
 
-import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
-
 const experiences = [
   {
     title: "Marketing",
@@ -214,17 +211,7 @@ const Curriculo = () => {
             ))}
           </div>
         </section>
-
-        <section id="contato" className="mt-4">
-          <ContactSection showHeading />
-        </section>
       </main>
-
-
-      <div className="max-w-5xl mx-auto px-4 md:px-8">
-        <Footer />
-      </div>
-
     </div>
   );
 };
