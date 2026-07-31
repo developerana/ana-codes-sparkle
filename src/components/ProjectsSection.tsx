@@ -193,26 +193,32 @@ export const ProjectsSection = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3, delay: index * 0.03 }}
-                className="group rounded-2xl bg-background border border-border/60 hover:border-primary/40 transition-colors p-5 flex flex-col"
+                className={`group rounded-2xl bg-background border border-border/60 hover:border-primary/40 transition-all duration-300 p-5 flex flex-col ${
+                  isVideo ? "cursor-pointer hover:-translate-y-1" : ""
+                }`}
               >
                 {isVideo ? (
                   <div className="relative mb-4 rounded-xl overflow-hidden aspect-video bg-gradient-to-br from-primary/25 via-background to-background border border-border/60">
                     <div
-                      className="absolute inset-0 opacity-40"
+                      className="absolute inset-0 opacity-40 transition-all duration-500 group-hover:opacity-70 group-hover:scale-105"
                       style={{
                         backgroundImage:
                           "linear-gradient(hsl(var(--primary) / 0.25) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.25) 1px, transparent 1px)",
                         backgroundSize: "28px 28px",
                       }}
                     />
-                    <span className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-background/80 backdrop-blur text-[10px] font-bold text-foreground">
+                    <div className="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10" />
+                    <span className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-background/80 backdrop-blur text-[10px] font-bold text-foreground transition-opacity duration-300 group-hover:opacity-0">
                       {project.duration}
                     </span>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                      <span className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg transition-all duration-300 ease-out scale-90 opacity-80 group-hover:scale-110 group-hover:opacity-100 group-hover:shadow-[0_0_28px_hsl(var(--primary)/0.55)]">
                         <Play className="w-5 h-5 text-primary-foreground fill-current ml-0.5" />
                       </span>
                     </div>
+                    <span className="absolute bottom-0 left-0 right-0 z-10 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-foreground bg-gradient-to-t from-background to-transparent translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      Assistir · {project.duration}
+                    </span>
                   </div>
                 ) : (
                   <div className="flex items-start justify-between mb-3">
