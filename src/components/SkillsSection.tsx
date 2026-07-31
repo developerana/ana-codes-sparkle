@@ -25,7 +25,7 @@ const skillCategories = [
       "Social Media",
       "Branding",
       "Copywriting",
-      "Planejamento de Campanhas",
+      "Planejamento",
       "Adobe Photoshop",
       "Canva",
     ],
