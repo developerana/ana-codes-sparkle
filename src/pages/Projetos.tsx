@@ -72,7 +72,7 @@ const Projetos = () => {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, index) => (
+            {filtered.slice(0, 9).map((project, index) => (
               <ProjectCard
                 key={project.title}
                 project={project}
