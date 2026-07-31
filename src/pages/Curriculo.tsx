@@ -220,8 +220,9 @@ const Curriculo = () => {
           </div>
         </section>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <section className="bento p-6 lg:p-8">
+        <div className="grid grid-cols-1 gap-4">
+          <section className="bento p-6 lg:p-10">
+
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                 <GraduationCap className="w-5 h-5 text-primary" />
