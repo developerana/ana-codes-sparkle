@@ -51,7 +51,13 @@ export const ContactSection = ({ showHeading = true }: { showHeading?: boolean }
           </div>
         )}
 
-        <div className="grid sm:grid-cols-2 gap-4 md:min-w-[380px]">
+        <div
+          className={
+            showHeading
+              ? "grid sm:grid-cols-2 gap-4 md:min-w-[380px]"
+              : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full"
+          }
+        >
           {contactInfo.map((info) => (
             <div key={info.label} className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-background/15 flex items-center justify-center">
