@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 
 import { ProjectCard } from "@/components/ProjectCard";
+import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { FilterPill } from "@/components/FilterPill";
 import { filters, projects, type Category } from "@/data/projects";
@@ -71,6 +72,9 @@ const Projetos = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
+          <ContactSection />
+        </div>
       </main>
       <Footer />
     </div>
