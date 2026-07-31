@@ -140,7 +140,11 @@ export const ProjectsSection = () => {
             return (
               <button
                 key={filter}
-                onClick={() => setActive(filter)}
+                onClick={() => {
+                  setActive(filter);
+                  setExpanded(false);
+                }}
+
                 className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isActive
                     ? "text-primary-foreground"
