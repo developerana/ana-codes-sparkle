@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -57,15 +58,7 @@ export const Header = () => {
               </li>
             ))}
           </ul>
-          <Button variant="heroOutline" size="sm" asChild>
-            <a
-              href="/curriculo-ana-helouise.pdf"
-              download="Curriculo-Ana-Helouise.pdf"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Currículo
-            </a>
-          </Button>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
@@ -99,15 +92,7 @@ export const Header = () => {
                 </li>
               ))}
               <li>
-                <a
-                  href="/curriculo-ana-helouise.pdf"
-                  download="Curriculo-Ana-Helouise.pdf"
-                  className="inline-flex items-center text-primary font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Baixar Currículo
-                </a>
+                <ThemeToggle />
               </li>
             </ul>
           </motion.div>
