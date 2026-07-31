@@ -276,7 +276,7 @@ export const ProjectsSection = () => {
         </AnimatePresence>
       </motion.div>
 
-      <div className="mt-6 flex justify-center">
+      <div className="mt-auto pt-6 flex justify-center">
         <button
           onClick={() => {
             if (hasMore) {
