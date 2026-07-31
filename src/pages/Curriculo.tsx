@@ -1,14 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  Mail,
-  Phone,
-  Linkedin,
-  Instagram,
-  GraduationCap,
-} from "lucide-react";
+import { ArrowLeft, GraduationCap } from "lucide-react";
 
 const experiences = [
   {
