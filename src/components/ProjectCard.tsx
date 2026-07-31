@@ -14,15 +14,16 @@ export const ProjectCard = ({ project, index = 0 }: Props) => {
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 20, scale: 0.96, filter: "blur(8px)" }}
+      initial={{ opacity: 0, y: 24, scale: 0.94, filter: "blur(10px)" }}
       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -10, scale: 0.94, filter: "blur(8px)" }}
+      exit={{ opacity: 0, y: -12, scale: 0.92, filter: "blur(10px)" }}
       transition={{
-        duration: 0.45,
-        delay: index * 0.06,
-        ease: [0.22, 1, 0.36, 1],
-        layout: { type: "spring", stiffness: 260, damping: 28 },
+        duration: 0.5,
+        delay: index * 0.05,
+        ease: [0.16, 1, 0.3, 1],
+        layout: { type: "spring", stiffness: 300, damping: 32, mass: 0.8 },
       }}
+
       className={`group rounded-2xl bg-background border border-border/60 hover:border-primary/40 transition-all duration-300 p-5 flex flex-col ${
         isVideo ? "cursor-pointer hover:-translate-y-1" : ""
       }`}
