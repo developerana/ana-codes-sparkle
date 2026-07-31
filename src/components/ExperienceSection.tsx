@@ -41,13 +41,17 @@ const experiences = [
 ];
 
 export const ExperienceSection = () => {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? experiences : experiences.slice(0, 2);
+
   return (
-    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8">
+    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8 flex flex-col">
       <h2 className="font-heading text-2xl font-bold tracking-tight mb-8">
         EXPERIÊNCIA
       </h2>
 
       <div className="space-y-6">
+
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.title}
