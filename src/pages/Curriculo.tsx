@@ -8,8 +8,6 @@ import {
   Linkedin,
   Instagram,
   GraduationCap,
-  
-  Languages,
 } from "lucide-react";
 
 const experiences = [
@@ -245,18 +243,6 @@ const Curriculo = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 mt-8 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Languages className="w-5 h-5 text-primary" />
-              </div>
-              <h2 className="font-heading text-xl font-bold tracking-tight">
-                IDIOMAS
-              </h2>
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span>Inglês</span>
-              <span className="tag">Intermediário</span>
-            </div>
           </section>
         </div>
 
