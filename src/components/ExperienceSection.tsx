@@ -42,7 +42,7 @@ const experiences = [
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8">
+    <section id="experience" className="md:col-span-5 bento p-6 lg:p-8 flex flex-col">
       <h2 className="font-heading text-2xl font-bold tracking-tight mb-8">
         EXPERIÊNCIA
       </h2>
@@ -78,6 +78,15 @@ export const ExperienceSection = () => {
             </p>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-auto pt-6 flex justify-center">
+        <a
+          href="#contact"
+          className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+        >
+          VER EXPERIÊNCIA
+        </a>
       </div>
     </section>
   );
