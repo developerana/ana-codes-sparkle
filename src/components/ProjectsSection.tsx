@@ -117,11 +117,16 @@ const projects: Project[] = [
 
 export const ProjectsSection = () => {
   const [active, setActive] = useState<Category>("Todos");
+  const [expanded, setExpanded] = useState(false);
 
-  const visible =
+  const filtered =
     active === "Todos"
       ? projects
       : projects.filter((p) => p.category === active);
+
+  const visible = expanded ? filtered : filtered.slice(0, 6);
+  const hasMore = filtered.length > 6;
+
 
   return (
     <section id="projects" className="md:col-span-7 bento p-6 lg:p-8 flex flex-col">
@@ -135,7 +140,11 @@ export const ProjectsSection = () => {
             return (
               <button
                 key={filter}
-                onClick={() => setActive(filter)}
+                onClick={() => {
+                  setActive(filter);
+                  setExpanded(false);
+                }}
+
                 className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isActive
                     ? "text-primary-foreground"
@@ -222,6 +231,18 @@ export const ProjectsSection = () => {
           })}
         </AnimatePresence>
       </motion.div>
+
+      {hasMore && (
+        <div className="mt-6 flex justify-center">
+          <button
+            onClick={() => setExpanded((v) => !v)}
+            className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            {expanded ? "VER MENOS" : "VER PROJETOS"}
+          </button>
+        </div>
+      )}
+
     </section>
   );
 };
