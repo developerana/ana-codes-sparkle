@@ -6,7 +6,7 @@ export const Footer = () => {
 
   return (
     <footer className="max-w-7xl mx-auto px-4 md:px-8 py-10">
-      <div className="flex flex-col items-center justify-center gap-4 text-center">
+      <div className="flex flex-row items-center justify-between gap-4">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
