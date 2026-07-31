@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Briefcase, GraduationCap, Clapperboard } from "lucide-react";
 
 const experiences = [
@@ -81,12 +82,12 @@ export const ExperienceSection = () => {
       </div>
 
       <div className="mt-auto pt-6 flex justify-center">
-        <a
-          href="#contact"
+        <Link
+          to="/curriculo"
           className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
         >
           VER EXPERIÊNCIA
-        </a>
+        </Link>
       </div>
     </section>
   );
