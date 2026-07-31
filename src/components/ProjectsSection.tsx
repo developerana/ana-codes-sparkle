@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ProjectCard";
+import { FilterPill } from "@/components/FilterPill";
 import { filters, projects, type Category } from "@/data/projects";
 
 export const ProjectsSection = () => {
