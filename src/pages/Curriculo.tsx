@@ -22,10 +22,9 @@ const experiences = [
   {
     title: "Criação e gerenciamento de conteúdo — construção civil",
     company: "Opção Vidraçaria",
-    period: "01/2024 - Atual",
+    period: "01/2024 - 06/2024",
     description:
       "Criei uma conta para promover os serviços de uma vidraçaria, utilizando copy e design para compartilhar trabalhos realizados e atrair novos clientes. Explorei estratégias de marketing digital e como alcançar e converter o público-alvo online.",
-    current: true,
   },
   {
     title: "Desenvolvimento Web",
