@@ -10,11 +10,9 @@ export const Footer = () => {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-xs uppercase tracking-[0.2em] text-muted-foreground/60 flex items-center gap-1.5"
+          className="text-xs uppercase tracking-[0.2em] text-muted-foreground/60"
         >
-          © {currentYear} Ana Helouise — feito com
-          <Heart className="w-3.5 h-3.5 text-primary fill-primary" />
-          e código
+          © {currentYear} ANA HELOUISE
         </motion.p>
 
         <div className="flex items-center gap-4">
