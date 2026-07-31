@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, GraduationCap } from "lucide-react";
-import { ContactSection } from "@/components/ContactSection";
+
 import { Footer } from "@/components/Footer";
 
 const experiences = [
@@ -213,11 +213,8 @@ const Curriculo = () => {
             ))}
           </div>
         </section>
-
-        <div className="mt-4">
-          <ContactSection showHeading={false} />
-        </div>
       </main>
+
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <Footer />
       </div>
