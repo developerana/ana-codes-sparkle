@@ -28,7 +28,7 @@ const contactInfo = [
   },
 ];
 
-export const ContactSection = () => {
+export const ContactSection = ({ showHeading = true }: { showHeading?: boolean }) => {
   return (
     <>
       <motion.section
