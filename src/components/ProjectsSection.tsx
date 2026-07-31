@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ProjectCard";
+import { FilterPill } from "@/components/FilterPill";
 import { filters, projects, type Category } from "@/data/projects";
 
 export const ProjectsSection = () => {
@@ -22,38 +23,15 @@ export const ProjectsSection = () => {
           PROJETOS
         </h2>
         <div className="flex flex-wrap gap-2">
-          {filters.map((filter) => {
-            const isActive = active === filter;
-            return (
-              <motion.button
-                key={filter}
-                onClick={() => setActive(filter)}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.94 }}
-                transition={{ type: "spring", stiffness: 500, damping: 28 }}
-                className={`relative px-3 py-1 rounded-full text-xs font-bold transition-colors ${
-                  isActive
-                    ? "text-primary-foreground"
-                    : "bg-muted/60 text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="project-filter-pill"
-                    className="absolute inset-0 rounded-full bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.45)]"
-                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
-                  />
-                )}
-                <motion.span
-                  className="relative"
-                  animate={{ scale: isActive ? 1.04 : 1 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 24 }}
-                >
-                  {filter.toUpperCase()}
-                </motion.span>
-              </motion.button>
-            );
-          })}
+          {filters.map((filter) => (
+            <FilterPill
+              key={filter}
+              label={filter.toUpperCase()}
+              isActive={active === filter}
+              layoutId="project-filter-pill"
+              onClick={() => setActive(filter)}
+            />
+          ))}
         </div>
       </div>
 
