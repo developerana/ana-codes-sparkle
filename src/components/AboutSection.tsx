@@ -9,7 +9,7 @@ export const AboutSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5 }}
-      className="md:col-span-4 rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col justify-between gap-8 min-h-[420px]"
+      className="md:col-span-12 rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col justify-between gap-8"
     >
       <h2 className="font-heading font-bold text-2xl tracking-tight">SOBRE</h2>
       <div className="space-y-4">

@@ -17,7 +17,7 @@ export const ProjectsSection = () => {
   const visible = filtered.slice(0, limit);
 
   return (
-    <section id="projects" className="md:col-span-7 bento p-6 lg:p-8 flex flex-col">
+    <section id="projects" className="md:col-span-12 bento p-6 lg:p-8 flex flex-col">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <h2 className="font-heading text-2xl font-bold tracking-tight">
           PROJETOS
