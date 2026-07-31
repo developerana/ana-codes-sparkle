@@ -7,7 +7,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="md:col-span-8 bento p-8 lg:p-12 flex flex-col justify-end min-h-[420px] relative overflow-hidden"
+      className="md:col-span-12 bento p-8 lg:p-12 flex flex-col justify-end min-h-[420px] relative overflow-hidden"
     >
       <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-primary/20 blur-[110px]" />
       <div
