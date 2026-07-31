@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Instagram, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 
 const roles = ["Edição de Vídeos", "Marketing", "Desenvolvimento"];
 
@@ -57,29 +56,6 @@ export const HeroSection = () => {
           Bacharel em Sistemas de Informação
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.18 }}
-          className="flex flex-wrap items-center gap-3 mt-8"
-        >
-          <Button variant="hero" size="lg" asChild>
-            <a href="#projects">Ver Meus Trabalhos</a>
-          </Button>
-          <Button variant="heroOutline" size="lg" asChild>
-            <a href="#contact">Vamos Criar Juntos</a>
-          </Button>
-          <Button variant="ghost" size="lg" asChild>
-            <a
-              href="/curriculo-ana-helouise.pdf"
-              download="Curriculo-Ana-Helouise.pdf"
-              className="text-primary hover:text-primary"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Currículo
-            </a>
-          </Button>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
