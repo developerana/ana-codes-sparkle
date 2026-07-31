@@ -276,16 +276,21 @@ export const ProjectsSection = () => {
         </AnimatePresence>
       </motion.div>
 
-      {hasMore && (
-        <div className="mt-6 flex justify-center">
-          <button
-            onClick={() => setExpanded((v) => !v)}
-            className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-          >
-            {expanded ? "VER MENOS" : "VER PROJETOS"}
-          </button>
-        </div>
-      )}
+      <div className="mt-6 flex justify-center">
+        <button
+          onClick={() => {
+            if (hasMore) {
+              setExpanded((v) => !v);
+            } else {
+              setActive("Todos");
+              setExpanded(true);
+            }
+          }}
+          className="px-5 py-2 rounded-full text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+        >
+          {expanded && hasMore ? "VER MENOS" : "VER PROJETOS"}
+        </button>
+      </div>
 
     </section>
   );
