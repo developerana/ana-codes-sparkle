@@ -211,7 +211,15 @@ const Curriculo = () => {
             ))}
           </div>
         </section>
+
+        <div className="mt-4">
+          <ContactSection />
+        </div>
       </main>
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <Footer />
+      </div>
+
     </div>
   );
 };
