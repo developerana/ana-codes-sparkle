@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 
 import { ProjectCard } from "@/components/ProjectCard";
+import { FilterPill } from "@/components/FilterPill";
 import { Footer } from "@/components/Footer";
 import { filters, projects, type Category } from "@/data/projects";
 
