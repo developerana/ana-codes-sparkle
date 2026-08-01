@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 
-const roles = ["Edição de Vídeos", "Marketing", "Desenvolvimento"];
+const roles = ["Edição de Vídeos", "Marketing & Conteúdo", "Desenvolvimento"];
 
 export const HeroSection = () => {
   return (
