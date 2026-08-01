@@ -14,12 +14,21 @@ export const AboutSection = () => {
       <h2 className="font-heading font-bold text-2xl tracking-tight">SOBRE</h2>
       <div className="space-y-4">
         <p className="font-heading font-bold text-2xl leading-tight">
-          Estratégia, criatividade e tecnologia.
+          Trabalho na interseção entre vídeo, marketing e desenvolvimento.
         </p>
         <p className="font-medium leading-relaxed opacity-90">
-          Minha formação técnica me permite ir além da execução: penso cada
-          projeto de forma estratégica, unindo criatividade, tecnologia e
-          comunicação para construir experiências que geram impacto.
+          Gosto de criar projetos que tenham propósito: aqueles que comunicam
+          uma ideia com clareza, funcionam bem na prática e também despertam
+          alguma emoção em quem vê. Minha formação técnica me deu estrutura para
+          pensar em estratégia, organização e experiência do usuário. Já a
+          edição de vídeo, o design e o marketing me ensinaram a observar
+          detalhes, contar histórias e transformar conceitos em algo visualmente
+          memorável. Grande parte do meu repertório criativo vem de coisas que
+          fazem parte do meu dia a dia: games, filmes, séries, animes e música.
+          Essas referências aparecem naturalmente na forma como penso ritmo,
+          estética, narrativa e identidade visual. Acredito que os melhores
+          projetos surgem quando criatividade e tecnologia trabalham juntas. É
+          esse equilíbrio que busco em cada trabalho que desenvolvo.
         </p>
       </div>
       <a
