@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Briefcase, GraduationCap, Clapperboard } from "lucide-react";
@@ -42,6 +43,8 @@ const experiences = [
 ];
 
 export const ExperienceSection = () => {
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+
   return (
     <section id="experience" className="md:col-span-12 bento p-6 lg:p-8 flex flex-col">
       <h2 className="font-heading text-2xl font-bold tracking-tight mb-8">
@@ -74,9 +77,24 @@ export const ExperienceSection = () => {
               {exp.title}
             </h3>
             <p className="text-sm text-muted-foreground mb-2">{exp.company}</p>
-            <p className="text-sm text-muted-foreground/80 leading-relaxed whitespace-pre-line">
+            <p
+              className={`text-sm text-muted-foreground/80 leading-relaxed whitespace-pre-line ${
+                !expanded[index] ? "line-clamp-4 md:line-clamp-none" : ""
+              }`}
+            >
               {exp.description}
             </p>
+            {exp.description.length > 200 && (
+              <button
+                type="button"
+                onClick={() =>
+                  setExpanded((prev) => ({ ...prev, [index]: !prev[index] }))
+                }
+                className="md:hidden mt-2 text-xs font-bold text-primary"
+              >
+                {expanded[index] ? "Ver menos" : "Ver mais +"}
+              </button>
+            )}
           </motion.div>
         ))}
       </div>
