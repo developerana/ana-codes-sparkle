@@ -3,19 +3,6 @@ import { Clapperboard, Megaphone, Code2 } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "PRODUÇÃO AUDIOVISUAL",
-    subtitle: "Meu foco principal",
-    description:
-      "Edição, motion e finalização de vídeos para redes sociais e campanhas, do roteiro ao corte final.",
-    icon: Clapperboard,
-    skills: [
-      "After Effects",
-      "CapCut Pro",
-      "Motion Graphics",
-      "Color Grading",
-    ],
-  },
-  {
     title: "MARKETING & CONTEÚDO",
     subtitle: "Estratégia e presença digital",
     description:
@@ -28,6 +15,19 @@ const skillCategories = [
       "Planejamento",
       "Adobe Photoshop",
       "Canva",
+    ],
+  },
+  {
+    title: "PRODUÇÃO AUDIOVISUAL",
+    subtitle: "Meu foco principal",
+    description:
+      "Edição, motion e finalização de vídeos para redes sociais e campanhas, do roteiro ao corte final.",
+    icon: Clapperboard,
+    skills: [
+      "After Effects",
+      "CapCut Pro",
+      "Motion Graphics",
+      "Color Grading",
     ],
   },
   {
