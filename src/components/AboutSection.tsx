@@ -17,8 +17,7 @@ export const AboutSection = () => {
           Trabalho na interseção entre vídeo, marketing e desenvolvimento.
         </p>
         <p className="font-medium leading-relaxed opacity-90 whitespace-pre-line">
-          Minha formação técnica me deu estrutura para pensar em estratégia, organização e experiência do usuário. Já a edição de vídeo, o design e o marketing me ensinaram a observar detalhes, contar histórias e transformar conceitos em algo visualmente memorável. Grande parte do meu repertório criativo vem de coisas que fazem parte do meu dia a dia.{"\n"}
-          Acredito que os melhores projetos surgem quando criatividade e tecnologia trabalham juntas. É esse equilíbrio que busco em cada trabalho que desenvolvo.
+          Minha formação técnica me deu estrutura para pensar em estratégia, organização e experiência do usuário. Já a edição de vídeo, o design e o marketing me ensinaram a observar detalhes, contar histórias e transformar conceitos em algo visualmente memorável.
         </p>
       </div>
       <a
