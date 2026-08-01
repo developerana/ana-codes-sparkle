@@ -43,7 +43,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.55, delay: 0.05 }}
           className="font-heading text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight mb-5"
         >
-          Ana <span className="text-primary">Helouise</span>
+          Sou a Ana{"\u00a0"}<span className="text-primary">Helouise</span>{"\n"}
         </motion.h1>
 
         <motion.p
@@ -52,8 +52,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.55, delay: 0.12 }}
           className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed whitespace-pre-line"
         >
-          Editora de vídeo, marketing e desenvolvimento.{"\u00a0"}{"\n"}
-          Bacharel em Sistemas de Informação
+          Bacharel em Sistemas de Informação, trabalho na interseção entre vídeo, marketing e desenvolvimento, criando experiências digitais que unem estratégia, criatividade e tecnologia.
         </motion.p>
 
 
