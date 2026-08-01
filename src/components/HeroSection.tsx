@@ -43,7 +43,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.55, delay: 0.05 }}
           className="font-heading text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight mb-5"
         >
-          Sou a <span className="text-primary">Helouise</span>
+          Sou a <span className="text-primary">Ana Helouise</span>
         </motion.h1>
 
         <motion.p
