@@ -4,11 +4,11 @@ import { Briefcase, GraduationCap, Clapperboard } from "lucide-react";
 
 const experiences = [
   {
-    title: "Marketing & Editora de Vídeo",
+    title: "Marketing & Conteúdo",
     company: "UNIVETS Saúde Animal",
     period: "02/2026 - Atualmente",
     description:
-      "Planejamento de campanhas, criação de Reels, motion design, edição de vídeos, gestão de redes sociais, identidade visual e materiais impressos.",
+      "Sou responsável por toda a área de marketing da UNIVETS Saúde Animal, conduzindo o planejamento, a criação, a execução e a evolução da comunicação da clínica. Na prática, atuo como o setor de marketing da empresa, liderando todas as frentes relacionadas à marca, conteúdo e presença digital.\nGerencio integralmente as redes sociais, desenvolvo campanhas, produzo e edito vídeos, crio peças para mídias digitais e impressas, elaboro materiais institucionais, acompanho resultados e defino estratégias de comunicação alinhadas a gestão e aos objetivos do negócio.\nEssa atuação exige autonomia, visão estratégica e capacidade de transformar demandas do dia a dia em ações de marketing consistentes. Mais do que produzir conteúdo, sou responsável por manter a marca ativa, coerente e relevante em todos os pontos de contato com o público, conectando criatividade, organização e tomada de decisão para sustentar a comunicação da clínica de ponta a ponta.",
     icon: Clapperboard,
     current: true,
   },
@@ -74,7 +74,7 @@ export const ExperienceSection = () => {
               {exp.title}
             </h3>
             <p className="text-sm text-muted-foreground mb-2">{exp.company}</p>
-            <p className="text-sm text-muted-foreground/80 leading-relaxed">
+            <p className="text-sm text-muted-foreground/80 leading-relaxed whitespace-pre-line">
               {exp.description}
             </p>
           </motion.div>
