@@ -16,10 +16,10 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary: #1DB954 converted to HSL */
+    /* Primary: #FF0000 converted to HSL */
     --primary: 0 100% 50%;
     --primary-foreground: 0 0% 4%;
-    /* Accent glow: #73ffb8 */
+    /* Accent glow: lighter red */
     --primary-glow: 0 100% 70%;
 
     --secondary: 0 0% 12%;
