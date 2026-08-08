@@ -2,15 +2,22 @@ import { memo } from "react";
 
 const BackgroundEffects = () => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div
+      className="fixed inset-0 -z-10 overflow-hidden pointer-events-none"
+      style={{
+        // parallax offsets derived from global --mx / --my
+        ["--px" as string]: "calc((var(--mx, 0.5) - 0.5) * 1px)",
+        ["--py" as string]: "calc((var(--my, 0.5) - 0.5) * 1px)",
+      }}
+    >
       {/* Base gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
       
       {/* Animated glass orbs with red accent glow */}
-      <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-primary/14 blur-[120px] animate-float-slow opacity-60" />
-      <div className="absolute top-[30%] right-[-15%] w-[50vw] h-[50vw] rounded-full bg-primary/12 blur-[140px] animate-float opacity-45" style={{ animationDelay: "-2s" }} />
-      <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] rounded-full bg-primary/14 blur-[120px] animate-float-slow opacity-50" style={{ animationDelay: "-4s" }} />
-      <div className="absolute top-[60%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-primary/10 blur-[100px] animate-drift opacity-40" style={{ animationDelay: "-3s" }} />
+      <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-primary/14 blur-[120px] animate-float-slow opacity-60" style={{ transform: `translate3d(calc(var(--px) * 60), calc(var(--py) * 60), 0)`, transition: "transform 500ms cubic-bezier(0.22,1,0.36,1)" }} />
+      <div className="absolute top-[30%] right-[-15%] w-[50vw] h-[50vw] rounded-full bg-primary/12 blur-[140px] animate-float opacity-45" style={{ transform: `translate3d(calc(var(--px) * -45), calc(var(--py) * -45), 0)`, transition: "transform 500ms cubic-bezier(0.22,1,0.36,1)",  animationDelay: "-2s" }} />
+      <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] rounded-full bg-primary/14 blur-[120px] animate-float-slow opacity-50" style={{ transform: `translate3d(calc(var(--px) * 35), calc(var(--py) * 35), 0)`, transition: "transform 500ms cubic-bezier(0.22,1,0.36,1)",  animationDelay: "-4s" }} />
+      <div className="absolute top-[60%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-primary/10 blur-[100px] animate-drift opacity-40" style={{ transform: `translate3d(calc(var(--px) * -70), calc(var(--py) * -70), 0)`, transition: "transform 500ms cubic-bezier(0.22,1,0.36,1)",  animationDelay: "-3s" }} />
       
       {/* Glassmorphism grid overlay */}
       <div 
@@ -21,6 +28,8 @@ const BackgroundEffects = () => {
             linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)
           `,
           backgroundSize: "80px 80px",
+          transform: "translate3d(calc(var(--px) * 20), calc(var(--py) * 20), 0)",
+          transition: "transform 500ms cubic-bezier(0.22,1,0.36,1)",
         }}
       />
       
