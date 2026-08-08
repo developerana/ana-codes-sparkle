@@ -178,6 +178,48 @@
     @apply transition-all duration-300 hover:border-primary/40 hover:-translate-y-0.5;
   }
 
+  /* Mouse spotlight / halo */
+  .bento,
+  .glass-card,
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .bento::after,
+  .glass-card::after,
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--spot-o, 0);
+    transition: opacity 400ms ease;
+    background: radial-gradient(
+      340px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      hsl(var(--primary) / 0.16),
+      hsl(var(--primary) / 0.06) 40%,
+      transparent 70%
+    );
+  }
+
+  .bento > *,
+  .glass-card > *,
+  .spotlight > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bento::after,
+    .glass-card::after,
+    .spotlight::after {
+      display: none;
+    }
+  }
+
   .chip {
     @apply inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/25;
   }
