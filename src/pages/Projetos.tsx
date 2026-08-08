@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { FilterPill } from "@/components/FilterPill";
 import { filters, projects, type Category } from "@/data/projects";
+import { Reveal } from "@/components/Reveal";
 
 const Projetos = () => {
   const [active, setActive] = useState<Category>("Todos");
@@ -44,7 +45,7 @@ const Projetos = () => {
           completa dos meus trabalhos.
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        <Reveal className="flex flex-wrap gap-2 mb-8" delay={0.05} y={14}>
           {filters.map((filter) => (
             <FilterPill
               key={filter}
@@ -55,7 +56,7 @@ const Projetos = () => {
               onClick={() => setActive(filter)}
             />
           ))}
-        </div>
+        </Reveal>
 
 
         <motion.div

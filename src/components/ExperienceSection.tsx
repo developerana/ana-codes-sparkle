@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Reveal } from "@/components/Reveal";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Briefcase, GraduationCap, Clapperboard } from "lucide-react";
@@ -46,7 +47,7 @@ export const ExperienceSection = () => {
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   return (
-    <section id="experience" className="md:col-span-12 bento p-6 lg:p-8 flex flex-col">
+    <Reveal as="section" id="experience" className="md:col-span-12 bento p-6 lg:p-8 flex flex-col">
       <h2 className="font-heading text-2xl font-bold tracking-tight mb-8">
         EXPERIÊNCIA
       </h2>
@@ -107,6 +108,6 @@ export const ExperienceSection = () => {
           VER EXPERIÊNCIA
         </Link>
       </div>
-    </section>
+    </Reveal>
   );
 };
