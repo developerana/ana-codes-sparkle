@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ProjectCard";
 import { FilterPill } from "@/components/FilterPill";
 import { filters, projects, type Category } from "@/data/projects";
+import { Reveal } from "@/components/Reveal";
 
 export const ProjectsSection = () => {
   const [active, setActive] = useState<Category>("Todos");
@@ -17,7 +18,7 @@ export const ProjectsSection = () => {
   const visible = filtered.slice(0, limit);
 
   return (
-    <section id="projects" className="md:col-span-12 bento p-6 lg:p-8 flex flex-col">
+    <Reveal as="section" id="projects" className="md:col-span-12 bento p-6 lg:p-8 flex flex-col">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <h2 className="font-heading text-2xl font-bold tracking-tight">
           PROJETOS
@@ -52,6 +53,6 @@ export const ProjectsSection = () => {
           VER PROJETOS
         </Link>
       </div>
-    </section>
+    </Reveal>
   );
 };
