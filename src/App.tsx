@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BackgroundEffects from "./components/BackgroundEffects";
+import { useSpotlight } from "./hooks/useSpotlight";
 import Index from "./pages/Index";
 import Curriculo from "./pages/Curriculo";
 import Projetos from "./pages/Projetos";
@@ -11,7 +12,9 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  useSpotlight();
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -28,6 +31,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
