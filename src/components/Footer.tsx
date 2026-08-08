@@ -9,7 +9,9 @@ export const Footer = () => {
       <div className="flex flex-row items-center justify-between gap-4">
         <motion.p
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-xs uppercase tracking-[0.2em] text-muted-foreground/60"
         >
           © {currentYear} ANA HELOUISE
